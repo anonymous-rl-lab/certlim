@@ -1,0 +1,27 @@
+{
+  "applies_to": "config/registered_v02.json",
+  "reason": "three errors in the registered gate text, all found after the first run. None is a threshold retune: E1 and E2 reverse an inequality I wrote backwards relative to Theorem 1(2)-(3) of the theory chapter; E3 replaces a numerical tolerance that was below the LP solver's own feasibility tolerance and therefore unachievable by construction. Both the original and the corrected verdicts are reported.",
+  "E1_G3_direction": {
+    "registered": "Delta_E(n) non-increasing in n",
+    "correct": "Delta_E(n) non-DECREASING in n; hence the gate G_E(n)=1{Delta_E(n)=0} is non-increasing",
+    "source": "theory chapter Thm 1(2), eq (22b) and the paragraph at line 349",
+    "note": "Delta_E(n) is the separation available from n samples, so it grows with n. The registered wording had it backwards. The v02 run under the registered wording is reported as FAILED and is kept in results/gates_v02_asregistered.json."
+  },
+  "E2_G4_nstar": {
+    "registered": "n* = min{n : Delta_E(n) <= 0.05}",
+    "correct": "n* = inf{n : G_E(n) = 0} = inf{n : Delta_E(n) > 0}   [eq (23)]",
+    "source": "theory chapter eq (19), (20), (23)"
+  },
+  "E3_sion_tolerance": {
+    "registered": "|gamma*(n) - Delta_E(n)/2| <= 1e-8",
+    "correct": "<= 1e-6",
+    "reason": "HiGHS default primal/dual feasibility tolerance is 1e-7, so 1e-8 is not achievable on the largest LPs (K=8, n=10, 19448 count states). The per-n error is reported in results/frontier_v02.csv so the reader can see it is confined to the largest problems."
+  },
+  "E4_permanent_obstruction_wording": {
+    "registered": "Delta_E(n)=Delta_E(1)=0 for all n  <=>  hulls collide at n=1",
+    "correct": "G_E(n)=1 for all n  <=>  there exist theta_S, theta_U with P_{theta_S} = P_{theta_U} exactly (an exact PAIRWISE single-sample collision), eq (24)",
+    "note": "Hull intersection at n=1 is necessary but NOT sufficient for permanent obstruction; a purely compositional intersection can dissolve at higher n. The chapter states this explicitly (line 738). The script now tests the correct statement and reports min pairwise TV."
+  },
+  "numeric_zero_tolerance": 1e-9,
+  "sion_tolerance": 1e-6
+}

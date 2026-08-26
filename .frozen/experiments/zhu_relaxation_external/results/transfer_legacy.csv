@@ -1,0 +1,5 @@
+target,n,side,n_unsafe,n_safe,decisiveness,observed_side_error,rho_U,rho_S,bound,bound_is_vacuous,Q2_holds
+NCA_T25_C0.5,17,unsafe,3,0,0.294117647059,0,1,,1.1,True,True
+NCA_T25_C1.0,8,unsafe,8,0,0.875,0,1,,1.1,True,True
+NCA_T25_C0.25,5,safe,0,5,1,1,,0.818181818182,0.918181818182,False,False
+NCM_T45_C0.5,25,safe,0,25,1,0,,0.709090909091,0.809090909091,False,True

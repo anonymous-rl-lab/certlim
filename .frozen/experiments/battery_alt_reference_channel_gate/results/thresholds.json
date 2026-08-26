@@ -1,0 +1,15 @@
+{
+  "psi_tertiles": [
+    0.0,
+    0.9851152073732721
+  ],
+  "tau_safe": 0.0,
+  "tau_unsafe": 0.99,
+  "n_models": 264,
+  "grades": {
+    "S": 108,
+    "U": 84,
+    "A": 72
+  },
+  "note": "thresholds set from pooled Psi tertiles before any Delta/D computation"
+}

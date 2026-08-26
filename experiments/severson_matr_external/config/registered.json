@@ -1,0 +1,51 @@
+{
+  "experiment": "severson_matr_external_certification_v01",
+  "frozen_at": "2026-08-26",
+  "seed": 20260826,
+  "target": {
+    "reject_max_cycles": 800,
+    "certify_min_cycles": 1000,
+    "transform": "log10"
+  },
+  "split": {
+    "fit": "author_train_batches_1_2",
+    "calibration": "author_primary_test_batches_1_2",
+    "external": "author_secondary_test_batch_3"
+  },
+  "model": {
+    "type": "standardized_ridge_gcv",
+    "alpha_grid_log10_min": -4,
+    "alpha_grid_log10_max": 4,
+    "alpha_grid_size": 33
+  },
+  "conformal": {
+    "nominal_coverage": 0.8,
+    "score": "absolute_log10_residual",
+    "quantile_method": "higher"
+  },
+  "negative_control_permutations": 200,
+  "evidence_menus": [
+    "protocol",
+    "scalar5",
+    "scalar100",
+    "curve5",
+    "curve100",
+    "curve5_permuted",
+    "curve100_permuted"
+  ],
+  "gates": {
+    "min_external_unsafe": 5,
+    "min_external_safe": 10,
+    "curve5_mape_improvement_over_scalar100": 0.1,
+    "curve5_mape_improvement_over_permutation_median": 0.05,
+    "max_side_error": 0.2,
+    "min_balanced_decisiveness": 0.25,
+    "min_external_interval_coverage": 0.75
+  },
+  "budgets": {
+    "smoke_minutes": 10,
+    "full_minutes": 60,
+    "gpu": false,
+    "paid_compute": false
+  }
+}

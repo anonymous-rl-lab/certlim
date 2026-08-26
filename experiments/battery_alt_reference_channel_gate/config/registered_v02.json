@@ -1,0 +1,52 @@
+{
+  "experiment": "nasa_battery_alt_reference_channel_gate_v02",
+  "supersedes": "nasa_battery_alt_gate_v01 (G0 FAILED, see docs/ERRATA.md)",
+  "dataset_url": "https://data.nasa.gov/docs/legacy/battery_alt_dataset.zip",
+  "dataset_citation": "K. Fricke, R. G. Nascimento, F. A. C. Viana, An accelerated Life Testing Dataset for Lithium-Ion Batteries with Constant and Variable Loading Conditions, NASA PCoE / PML-UCF, v0.0.1, 2023.",
+  "dataset_license": "MIT",
+  "seed": 20260826,
+
+  "design": "Standardised-probe certification experiment. The grade of a pack is fixed by its hazard rate under its own operational load; the evidence channel is the pack's REFERENCE discharge (mission_type=0, constant 2.52 A on every pack). The question is the paper's question: how many standardised probe runs are needed before a Safe pack can be separated from an Unsafe pack, and is there a floor that no n can beat.",
+
+  "unit": {"theta": "battery pack", "min_reference_discharges": 15},
+
+  "grade": {
+    "statistic": "h(theta) = P(max(temperature_battery) > 70 degC | regular mission)",
+    "rule": "tertiles of h over included packs; S = lowest tertile, U = highest tertile, A = middle",
+    "note": "computed at freeze time, before any Delta / D computation; values recorded in results/freeze_v02.json"
+  },
+
+  "evidence": {
+    "source": "one reference discharge (mission_type = 0)",
+    "features": ["dur", "rise = T_max - T_0", "V_med"],
+    "binariser": "b(f) = 1 if f >= pooled median of f over reference discharges of included packs (unweighted); cut points recorded in results/freeze_v02.json",
+    "symbol_K8": "4*b(dur) + 2*b(rise) + 1*b(V_med)",
+    "coarsening_chain": {"K8 -> K4": "drop the V_med bit", "K4 -> K2": "drop the rise bit"},
+    "K_primary": 4,
+    "K_sensitivity": [2, 4, 8],
+    "smoothing": {"rule": "add-delta on the per-pack empirical pmf", "delta_primary": 0.5, "delta_sensitivity": [0.0, 0.5, 1.0]}
+  },
+
+  "test": {"alpha": 0.05, "beta": 0.05,
+           "n_grid": [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20],
+           "n_grid_K8": [1, 2, 3, 4, 5, 6, 8, 10],
+           "n_grid_cap_reason": "count-state enumeration C(n+K-1, K-1) is exact and exhaustive; K=8 at n=20 is 888030 states"},
+
+  "gates": {
+    "G0_feasibility": "median over theta of (#action bins with >=5 missions) >= 3  [v01 axis; FAILED, recorded]",
+    "G1_bound": "D_{alpha,beta}(E,n) <= min{1, alpha + beta + Delta_E(n)} at every n and every K",
+    "G2_attained": "an adversarially selected two-point sub-experiment attains equality to 1e-8",
+    "G3_monotone": "Delta_E(n) non-increasing in n (tolerance 1e-9)",
+    "G4_nstar_sion": "n* = min{n : Delta_E(n) <= 0.05} reported (inf allowed); and |gamma*(n) - Delta_E(n)/2| <= 1e-8 at every n",
+    "G6_data_processing": "Delta_{K4} <= Delta_{K8} and Delta_{K2} <= Delta_{K4} at every shared n, on the strictly nested chain above; and Delta_{(X,g(X))} = Delta_X",
+    "G9_heldout_packs": "split included packs by pack-id parity into two disjoint halves; G1 must hold on each half independently"
+  },
+
+  "null_calibration": {"grade_permutations": 500, "block": "group (regular / recommissioned / second)",
+                       "statistic": "Delta_E(1) at K_primary"},
+
+  "sensitivity": {"hazard_threshold_degC": [60, 70, 80], "min_reference_discharges": [10, 15, 20],
+                  "smoothing_delta": [0.0, 0.5, 1.0]},
+
+  "reporting": "every gate is reported as run. No threshold, menu, quantiser or feature is changed after this file is hashed. Any deviation is recorded in docs/ERRATA.md."
+}

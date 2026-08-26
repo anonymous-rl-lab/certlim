@@ -1,0 +1,30 @@
+{
+  "aborted_cycles_removed": 442,
+  "corrected_verdict": {
+    "confirmatory_external_gate": false,
+    "reason": "selective thresholds and post-hoc geometry contrasts preclude confirmatory interpretation",
+    "status": "DIAGNOSTIC_ONLY"
+  },
+  "correction_version": "v01.1",
+  "eol90_eol95_spearman": 0.7904028078027224,
+  "eta_squared_domain": 0.8863126141483741,
+  "experiment": "zhu_relaxation_external_gate_v01",
+  "exploratory_K8": {
+    "hull_delta": 0.17857142857142858,
+    "min_pairwise_tv": 0.42857142857142855,
+    "pairwise_over_hull": 2.4
+  },
+  "n_cells": 118,
+  "n_labelled": 116,
+  "n_with_eol90": 98,
+  "registered_K4": {
+    "hull_delta": 1.1102230246251565e-16,
+    "min_pairwise_tv": 0.25
+  },
+  "registered_primary_K": 4,
+  "registered_verdict": {
+    "all_registered_gates_pass": false,
+    "reason": "G2 fails; G1, G4 and G5 are not evaluable under the frozen implementation",
+    "status": "NOT_ESTABLISHED"
+  }
+}

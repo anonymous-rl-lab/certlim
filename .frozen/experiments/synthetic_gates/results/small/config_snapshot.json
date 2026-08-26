@@ -1,0 +1,89 @@
+{
+  "contract": {
+    "alpha": 0.05,
+    "beta": 0.05,
+    "evidence_old": [
+      "A",
+      "H"
+    ],
+    "evidence_proxy": [
+      "A",
+      "H",
+      "W"
+    ],
+    "experiment_version": "v04-gates-0.1.0",
+    "finite_block_safe_models": [
+      0.25,
+      0.75
+    ],
+    "finite_block_unsafe_models": [
+      0.5
+    ],
+    "hazard_event": "H=1",
+    "numerical_tolerance": 1e-08,
+    "preregistered_landmarks": {
+      "delta_1": 0.0,
+      "delta_2": 0.125,
+      "gamma_2": 0.0625,
+      "hoeffding_optimal_block_n": 14,
+      "hoeffding_optimal_total_n": 266,
+      "n_star": 2,
+      "no_alert_min_n": 47
+    },
+    "theory_artifact": "Theory_Chapter_Safety_Certification_Limits_v04.md",
+    "theory_version": "v04"
+  },
+  "small": {
+    "delta_n_max": 128,
+    "description": "Exact frontier through n=128 plus seeded binomial validation of the registered proxy test.",
+    "dual_n_max": 48,
+    "expected_runtime_minutes": 60,
+    "mc_absolute_tolerance_floor": 0.01,
+    "mc_sigma_multiplier": 5.0,
+    "proxy_sample_sizes": [
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "q_values": [
+      0.05,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.45
+    ],
+    "random_seeds": [
+      20260825,
+      20260826,
+      20260827,
+      20260828,
+      20260829,
+      20260830,
+      20260831,
+      20260832,
+      20260833,
+      20260834,
+      20260835,
+      20260836,
+      20260837,
+      20260838,
+      20260839,
+      20260840,
+      20260841,
+      20260842,
+      20260843,
+      20260844
+    ],
+    "run_monte_carlo": true,
+    "s_values": [
+      0.05,
+      0.15,
+      0.3,
+      0.45
+    ],
+    "simulations_per_seed": 2000
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "status": "FAIL",
+  "classification": "smoke test of the method-corrected diagnostic rerun",
+  "interpretation": "development gate only; not a confirmatory causal certification result",
+  "geometry_warning": "The per-menu independent KMeans quantizers do not preserve evidence nesting; cross-menu delta comparisons are withdrawn. Use scripts/run_nested_geometry.py.",
+  "n_rows": 1597,
+  "n_cells": 16,
+  "endpoint_prevalence": 0.43832185347526614,
+  "median_metrics": {
+    "old_history": {
+      "auc": 0.9741862262146238,
+      "brier": 0.07642511602939127,
+      "coverage": 0.9684466019417476,
+      "balanced_decisiveness": 0.9482758620689655,
+      "unsafe_certify_error": 0.11494252873563218,
+      "safe_reject_error": 0.029411764705882353
+    },
+    "old_history_eis": {
+      "auc": 0.9604945426446441,
+      "brier": 0.13977047597396028,
+      "coverage": 0.8325242718446602,
+      "balanced_decisiveness": 0.7352941176470589,
+      "unsafe_certify_error": 0.005747126436781609,
+      "safe_reject_error": 0.13865546218487396
+    },
+    "old_history_eis_permuted": {
+      "auc": 0.9440983289867672,
+      "brier": 0.152138566667438,
+      "coverage": 0.9320388349514563,
+      "balanced_decisiveness": 0.9310344827586207,
+      "unsafe_certify_error": 0.09770114942528736,
+      "safe_reject_error": 0.07983193277310924
+    },
+    "old_snapshot": {
+      "auc": 0.9720370906983483,
+      "brier": 0.06855717579618584,
+      "coverage": 0.970873786407767,
+      "balanced_decisiveness": 0.9597701149425287,
+      "unsafe_certify_error": 0.1206896551724138,
+      "safe_reject_error": 0.03361344537815126
+    }
+  },
+  "median_delta": {
+    "old_history_n1": 0.18793103448275858,
+    "old_history_eis_n1": 0.0,
+    "old_history_eis_permuted_n1": 0.0
+  },
+  "evidence_time_cost": {
+    "median_eis_acquisition_seconds": 296.17801406770013,
+    "p90_eis_acquisition_seconds": 298.30481416871555
+  },
+  "paired_median_effects": {
+    "auc_gain_vs_old_history": -0.01369168356997974,
+    "brier_reduction_vs_old_history": -0.06334535994456901,
+    "auc_gain_vs_permuted_eis": 0.016396213657876912
+  },
+  "scientific_checks": {
+    "auc_gain_vs_old_history": false,
+    "brier_reduction_vs_old_history": false,
+    "new_menu_side_errors": true,
+    "auc_gain_vs_permuted_eis": false
+  },
+  "structural_checks": {
+    "delta_monotonicity": true
+  },
+  "withdrawn_gates": {
+    "balanced_decisiveness_gain_vs_old_history": "legacy baseline was a degenerate two-decision rule",
+    "delta2_gain_vs_old_history": "independent menu quantizers do not preserve evidence nesting"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "status": "FROZEN_BEFORE_MODEL_FIT",
+  "frozen_at": "2026-08-25",
+  "development_domain": "chemistry2-35C",
+  "untouched_confirmation_domain": "chemistry2-25C",
+  "endpoint": {
+    "name": "current-cycle severe under-delivery",
+    "definition": "discharge_capacity_mah / initial_capacity_mah < 0.50",
+    "note": "Operational endpoint, not a thermal-runaway or field-safety label."
+  },
+  "evidence_menus": {
+    "old_snapshot": "registered pre-outcome telemetry, current randomized action, and cycle index",
+    "old_history": "old_snapshot plus five prior capacity values and three prior action triplets",
+    "old_history_eis": "old_history plus the current pre-charge EIS spectrum",
+    "old_history_eis_permuted": "negative control: EIS permuted across cycles within each cell"
+  },
+  "model": {
+    "family": "RandomForestClassifier",
+    "n_estimators": 400,
+    "max_depth": 8,
+    "min_samples_leaf": 8,
+    "class_weight": "balanced_subsample",
+    "hyperparameter_tuning": false
+  },
+  "split": {
+    "unit": "cell",
+    "repetitions": 5,
+    "train_cells": 8,
+    "calibration_cells": 4,
+    "test_cells": 4,
+    "seed": 20260825
+  },
+  "three_decision": {
+    "alpha": 0.10,
+    "beta": 0.10,
+    "calibration": "empirical order-statistic thresholds on cell-disjoint calibration cells"
+  },
+  "geometry": {
+    "environment": "cell x fixed 20-cycle window",
+    "minimum_observations": 10,
+    "safe_risk_upper": 0.30,
+    "unsafe_risk_lower": 0.70,
+    "quantizer_bins": 8,
+    "quantizer_seeds": [17, 29, 41, 53, 67],
+    "block_lengths": [1, 2, 3]
+  },
+  "development_success_gates": {
+    "auc_gain_vs_old_history": 0.02,
+    "brier_reduction_vs_old_history": 0.01,
+    "balanced_decisiveness_gain_vs_old_history": 0.05,
+    "maximum_test_side_error": 0.15,
+    "auc_gain_vs_permuted_eis": 0.02,
+    "delta2_gain_vs_old_history": 0.0
+  }
+}

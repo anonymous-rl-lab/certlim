@@ -1,0 +1,23 @@
+{
+  "experiment": "zhu_relaxation_external_gate_v01",
+  "dataset_doi": "10.5281/zenodo.6405084",
+  "paper_doi": "10.1038/s41467-022-29837-w",
+  "seed": 20260826,
+  "include": {"datasets": ["d1_NCA", "d2_NCM"], "exclude_dataset": "d3_NCM_NCA",
+              "min_rest_seconds": 1600, "evidence_max_cycle": 10},
+  "eol": {"primary_frac": 0.90, "consistency_frac": 0.95, "abort_window": 11,
+          "abort_factor": 0.5, "sustain_k": 3,
+          "sensitivity": {"window": [7,11,15], "factor": [0.4,0.5,0.6], "k": [2,3,4]}},
+  "grades": {"hazard_eol_cycles": 100, "certify_eol_cycles": 150,
+             "psi_safe_max": 0.10, "psi_unsafe_min": 0.30,
+             "threshold_sensitivity": [[100,200],[110,160],[100,140]],
+             "thresholds_are_selective": true},
+  "quantizer": {"K_primary": 4, "K_nested": [2,4,8], "method": "rank_then_fixed_direction_equal_frequency"},
+  "null_calibration": {"domain_label_permutations": 500},
+  "negative_control": {"relax_block_permutations": 200},
+  "conformal": {"alpha": 0.10, "beta": 0.10, "quantile": "ceil((n+1)(1-a))/n", "interpolation": "higher"},
+  "transfer": {"source": "NCA_T45_C0.5",
+               "targets": ["NCA_T25_C0.5", "NCA_T25_C1.0", "NCA_T25_C0.25", "NCM_T45_C0.5"]},
+  "gates": {"G0_integrity": true, "G1_P1_dpi": true, "G2_P2_equality": true,
+            "G3_P3_channel_gain": true, "G4_Q1_margin": true, "G5_Q2_side_error": true}
+}

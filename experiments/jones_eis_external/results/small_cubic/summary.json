@@ -1,0 +1,66 @@
+{
+  "status": "FAIL",
+  "interpretation": "development gate only; not a confirmatory causal certification result",
+  "geometry_warning": "The per-menu independent KMeans quantizers do not preserve evidence nesting; cross-menu delta comparisons are withdrawn. Use results/nested_geometry/summary.json.",
+  "n_rows": 1597,
+  "n_cells": 16,
+  "endpoint_prevalence": 0.43832185347526614,
+  "median_metrics": {
+    "old_history": {
+      "auc": 0.9693570523648649,
+      "brier": 0.09301233190099087,
+      "coverage": 1.0,
+      "balanced_decisiveness": 1.0,
+      "unsafe_certify_error": 0.013793103448275862,
+      "safe_reject_error": 0.1484375
+    },
+    "old_history_eis": {
+      "auc": 0.9191448275862069,
+      "brier": 0.16041653245733814,
+      "coverage": 0.9544303797468354,
+      "balanced_decisiveness": 0.9448275862068966,
+      "unsafe_certify_error": 0.2012987012987013,
+      "safe_reject_error": 0.10546875
+    },
+    "old_history_eis_permuted": {
+      "auc": 0.9416701858108109,
+      "brier": 0.1544897840834966,
+      "coverage": 0.9411764705882353,
+      "balanced_decisiveness": 0.9285714285714286,
+      "unsafe_certify_error": 0.14942528735632185,
+      "safe_reject_error": 0.06722689075630252
+    },
+    "old_snapshot": {
+      "auc": 0.9751762774075148,
+      "brier": 0.08602586585952793,
+      "coverage": 1.0,
+      "balanced_decisiveness": 1.0,
+      "unsafe_certify_error": 0.020689655172413793,
+      "safe_reject_error": 0.15708812260536398
+    }
+  },
+  "median_delta": {
+    "old_history_n1": 0.2599999999999998,
+    "old_history_n2": 0.4358333333333333,
+    "old_history_n3": 0.5257499999999998,
+    "old_history_eis_n1": 0.0,
+    "old_history_eis_n2": 0.0,
+    "old_history_eis_n3": 0.0,
+    "old_history_eis_permuted_n1": 0.004040404040404099,
+    "old_history_eis_permuted_n2": 0.0602356780275562,
+    "old_history_eis_permuted_n3": 0.08911470459748014
+  },
+  "evidence_time_cost": {
+    "median_eis_acquisition_seconds": 296.17801406770013,
+    "p90_eis_acquisition_seconds": 298.30481416871555
+  },
+  "checks": {
+    "auc_gain_vs_old_history": false,
+    "brier_reduction_vs_old_history": false,
+    "balanced_decisiveness_gain_vs_old_history": false,
+    "new_menu_side_errors": false,
+    "auc_gain_vs_permuted_eis": false,
+    "delta2_gain_vs_old_history": false,
+    "delta_monotonicity": true
+  }
+}

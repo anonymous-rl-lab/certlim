@@ -1,0 +1,55 @@
+{
+  "status": "FROZEN_BEFORE_25C_DOWNLOAD_AND_MODEL_FIT",
+  "frozen_at": "2026-08-25",
+  "source_experiment": "Jones et al. chemistry-2 cross-temperature forecast",
+  "training_domain": "chemistry2-25C",
+  "external_test_domain": "chemistry2-35C",
+  "training_archive_md5": "08b0b29d7d74bb51d1c82baf5a7191f9",
+  "external_archive_md5": "6738937229d9343ede313a4895dc4312",
+  "outcomes": {
+    "primary": "normalized delivered capacity discharge_capacity_mah / initial_capacity_mah",
+    "secondary": "severe under-delivery indicator normalized capacity < 0.50"
+  },
+  "evidence_menus": {
+    "actions": "current randomized charge-stage and discharge currents",
+    "eis_actions": "current pre-charge EIS plus current actions; closest to the authors' deployment experiment",
+    "old_history": "previous capacity, cumulative throughput, OCV, cycle, five capacity lags, three action lags, and current actions",
+    "old_history_eis": "old_history plus current pre-charge EIS",
+    "old_history_eis_permuted": "negative control with EIS permuted within cell"
+  },
+  "split": {
+    "unit": "cell",
+    "calibration_repetitions": 5,
+    "training_cells": 24,
+    "calibration_cells": 8,
+    "external_test_cells": 16,
+    "seed": 20260825
+  },
+  "regressor": {
+    "family": "ExtraTreesRegressor",
+    "n_estimators": 500,
+    "max_features": 1.0,
+    "min_samples_leaf": 3,
+    "hyperparameter_tuning": false
+  },
+  "classifier": {
+    "family": "RandomForestClassifier",
+    "n_estimators": 500,
+    "max_depth": 10,
+    "min_samples_leaf": 8,
+    "class_weight": "balanced_subsample",
+    "hyperparameter_tuning": false
+  },
+  "three_decision": {
+    "alpha": 0.10,
+    "beta": 0.10
+  },
+  "development_success_gates": {
+    "eis_actions_rmse_reduction_vs_actions_fraction": 0.05,
+    "old_history_eis_rmse_reduction_vs_old_history_fraction": 0.02,
+    "old_history_eis_auc_gain_vs_old_history": 0.02,
+    "old_history_eis_auc_gain_vs_permuted": 0.02,
+    "balanced_decisiveness_gain_vs_old_history": 0.05,
+    "maximum_external_side_error": 0.15
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "runtime_seconds": 1.5529686129993934,
+  "rows": 124,
+  "columns": 108,
+  "split_counts": {
+    "calibration": 43,
+    "external": 40,
+    "fit": 41
+  },
+  "batch_counts": {
+    "1": 41,
+    "2": 43,
+    "3": 40
+  },
+  "duplicate_ids": [],
+  "cycle_life_min": 148.0,
+  "cycle_life_max": 2237.0
+}

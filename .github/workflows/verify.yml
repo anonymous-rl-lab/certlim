@@ -1,0 +1,19 @@
+name: verify
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      # Manifest verification, the repository contract tests, and a check that
+      # every headline number in the paper still reads out of its artifact.
+      - run: python3 reproduce.py --tier verify

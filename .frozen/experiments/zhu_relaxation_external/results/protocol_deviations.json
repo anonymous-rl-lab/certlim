@@ -1,0 +1,48 @@
+{
+  "frozen_files_modified": false,
+  "items": [
+    {
+      "id": "D01",
+      "issue": "v01 mixed registered and post-hoc gate definitions",
+      "resolution": "separate as_registered_gates.json and corrected_diagnostics.json"
+    },
+    {
+      "id": "D02",
+      "issue": "G4 was omitted",
+      "resolution": "included explicitly as NOT_EVALUABLE"
+    },
+    {
+      "id": "D03",
+      "issue": "200 registered relaxation pairing permutations were absent",
+      "resolution": "executed at K=4 and K=8"
+    },
+    {
+      "id": "D04",
+      "issue": "threshold pairs were not the frozen pairs",
+      "resolution": "restored primary (100,150) and all three frozen sensitivity pairs"
+    },
+    {
+      "id": "D05",
+      "issue": "K=8 was silently treated as primary",
+      "resolution": "K=4 is primary; K=8 is labelled resolution sensitivity"
+    },
+    {
+      "id": "D06",
+      "issue": "A-line implementation did not match its registered calibration",
+      "resolution": "G5 marked NOT_EVALUABLE; legacy output retained"
+    },
+    {
+      "id": "D07",
+      "issue": "pooled rank/quantile maps are data-adaptive and menus are independently compressed",
+      "resolution": "redundancy result is called a pipeline floor, not a sigma-algebra theorem test"
+    },
+    {
+      "id": "D08",
+      "issue": "run_all rebuilt the manifest before checking it",
+      "resolution": "release manifest is immutable during reruns"
+    }
+  ],
+  "legacy_v01_reporting_K": 8,
+  "registered_primary_K": 4,
+  "version": "v01.1"
+}

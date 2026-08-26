@@ -1,0 +1,90 @@
+{
+  "registration_id": "E3-baseline-head-to-head",
+  "frozen_before_any_outcome_was_computed": true,
+  "sources": {
+    "models": "repo_v6/.../nasa_randomized_usage_gate/data/models.parquet",
+    "collision": "repo_v6/.../nasa_randomized_usage_gate/data/collision.parquet"
+  },
+  "question": "On the same registered units and grades, do conventional methods notice when the evidence channel cannot support a bilateral certification decision?",
+  "channels": [
+    {
+      "name": "registered",
+      "cols": [
+        "e0",
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "table": "models",
+      "note": "released channel"
+    },
+    {
+      "name": "randomized",
+      "cols": [
+        "r0",
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "table": "collision",
+      "note": "randomized reference policy"
+    },
+    {
+      "name": "confounded",
+      "cols": [
+        "c0",
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "table": "collision",
+      "note": "preregistered natural-confounding construction; did not collide"
+    },
+    {
+      "name": "adversarial",
+      "cols": [
+        "a0",
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "table": "adversarial",
+      "note": "constructive stress test; Delta=0, regenerated under the frozen seed"
+    }
+  ],
+  "block_lengths": [
+    1,
+    5
+  ],
+  "alpha": 0.05,
+  "beta": 0.05,
+  "methods": {
+    "lr": "likelihood-ratio plug-in against the two class mixtures; always answers",
+    "ood": "total-variation distance to the safe-class mixture, thresholded; always answers",
+    "conformal": "split-conformal label set from class-conditional nonconformity; Alert iff the set is not a singleton",
+    "frontier": "the LP-optimal randomized Certify/Alert/Reject rule at alpha=beta=0.05"
+  },
+  "fairness": [
+    "Every baseline sees the full labelled registered class; nothing is held out from it that the frontier rule gets.",
+    "Every baseline is tuned twice and both tunings are reported: (a) to maximise its own balanced accuracy, and (b) to minimise its own worst-case unsafe-to-Certify error. Tuning (b) exists so that the comparison is not a criterion mismatch.",
+    "No baseline is tuned to fail, and no channel is dropped from the report."
+  ],
+  "metrics": [
+    "wc_unsafe_certify = max over registered unsafe models of P(Certify)",
+    "wc_safe_reject    = max over registered safe models of P(Reject)",
+    "decisiveness      = min over registered models of P(not Alert)",
+    "balanced_accuracy over the registered class, the baselines' own objective"
+  ],
+  "predictions_registered_in_advance": {
+    "P1": "The frontier rule satisfies wc_unsafe_certify <= alpha and wc_safe_reject <= beta on every channel. This is a validity check on the implementation, not a finding.",
+    "P2": "On the collision channel the frontier rule's decisiveness is at most alpha+beta = 0.10.",
+    "P3": "THE QUESTION. On the collision channel at least one baseline reports balanced accuracy well above chance while its worst-case unsafe-to-Certify error exceeds alpha, i.e. it does not notice that the channel cannot support the decision.",
+    "P4": "THE FAIR ALTERNATIVE. If every baseline either abstains heavily or falls to near-chance accuracy on the collision channel, that is recorded as the baselines noticing, and the contribution claimed is narrowed from detection to explanation."
+  },
+  "prohibited": [
+    "Reporting only the channel or tuning where the gap is largest.",
+    "Tuning a baseline on the frontier rule's own worst-case objective and then calling the comparison fair without also reporting its own-objective tuning.",
+    "Reading a large worst-case error as evidence that the baseline is a bad predictor; it is evidence about a different criterion."
+  ],
+  "erratum": "see config/erratum_1.json"
+}

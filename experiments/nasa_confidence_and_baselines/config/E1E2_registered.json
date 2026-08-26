@@ -1,0 +1,45 @@
+{
+  "registration_id": "E1E2-confidence-and-natural-collision",
+  "frozen_before_any_outcome_was_computed": true,
+  "source_artifact": "repo_v6/experiments/nasa_randomized_usage_gate/data/models.parquet",
+  "source_sha256": "3ca21fb1ce2f1170a9b6b3518113954bab4c824361b64cd0a702d0a88bcc023e",
+
+  "E1_confidence_certificate": {
+    "question": "Is the simultaneous-confidence certificate (24) non-vacuous on the released NASA cohort, and at which registration granularity?",
+    "registrations": [
+      {"name": "unit",   "group_by": ["cell", "stage", "policy"]},
+      {"name": "cell",   "group_by": ["cell", "policy"]},
+      {"name": "cohort", "group_by": ["policy"]}
+    ],
+    "eta": 0.05,
+    "alphabet_size": 4,
+    "radius_rule": "Bretagnolle-Huber-Carol: ||phat-p||_1 >= eps w.p. <= 2^K exp(-n eps^2/2); union bound over all extreme models of the registration; TV radius = eps/2",
+    "delta_lower_rule": "LP over the uncertainty-expanded families, not the Delta - 2*rho_max slack bound",
+    "primary_outcome": "Delta_lower(1) per registration",
+    "verdict_rule": "non-vacuous iff Delta_lower(1) > 0",
+    "declared_in_advance": [
+      "Pooling members of a registration averages their one-unit laws weighted by n_steps, and sums their step counts.",
+      "A registration that is non-vacuous only because pooling collapsed Delta to near zero is NOT a success; both Delta and Delta_lower are reported for every registration.",
+      "No registration is added, removed, or reweighted after any outcome is seen."
+    ]
+  },
+
+  "E2_natural_collision_census": {
+    "question": "How close do the registered NASA models come to an exact cross-grade collision without one being constructed?",
+    "statistics": [
+      "min pairwise TV over all safe x unsafe extreme pairs, overall and per policy",
+      "hull Delta(1) per policy",
+      "empirical CDF of pairwise TV at the 0.1, 1, 5 percent quantiles"
+    ],
+    "declared_in_advance": [
+      "This is an extremal statement about the registered empirical class. It is NOT an estimate of collision prevalence in any fleet.",
+      "The constructed adversarial collision already reported is excluded from this census."
+    ]
+  },
+
+  "prohibited": [
+    "Reporting only the registration that gives the most favourable certificate.",
+    "Interpreting a small minimum pairwise TV as evidence that collisions are common.",
+    "Changing eta, the radius rule, or the registration list after seeing any outcome."
+  ]
+}

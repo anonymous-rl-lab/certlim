@@ -1,0 +1,58 @@
+cell,block,step,stage,error,cycle
+PJ251,6,3,pairing,missing paired files: ['PJ251_006_16_GCPL_CA4.txt'],
+PJ251,17,2,pairing,missing paired files: ['PJ251_017_10_GCPL_CA4.txt'],
+PJ252,17,0,content,"PJ252_017_02_GCPL_CA5.txt: expected two positive-current stages, found 1",61.0
+PJ254,21,3,content,"PJ254_021_14_GCPL_CA7.txt: expected two positive-current stages, found 3",80.0
+PJ257,30,2,content,PJ257_030_12_GCPL_CB2.txt: empty table,115.0
+PJ257,30,3,content,PJ257_030_13_GEIS_CB2.txt: empty table,116.0
+PJ257,31,0,content,PJ257_031_04_GCPL_CB2.txt: empty table,117.0
+PJ257,31,1,content,PJ257_031_05_GEIS_CB2.txt: empty table,118.0
+PJ257,31,2,content,PJ257_031_09_GEIS_CB2.txt: empty table,119.0
+PJ257,31,3,content,PJ257_031_13_GEIS_CB2.txt: empty table,120.0
+PJ257,32,0,content,"PJ257_032_02_GCPL_CB2.txt: expected two positive-current stages, found 1",121.0
+PJ257,32,1,content,PJ257_032_05_GEIS_CB2.txt: empty table,122.0
+PJ257,32,2,content,PJ257_032_09_GEIS_CB2.txt: empty table,123.0
+PJ257,32,3,content,PJ257_032_13_GEIS_CB2.txt: empty table,124.0
+PJ259,28,2,pairing,missing paired files: ['PJ259_028_12_GCPL_CB4.txt'],
+PJ259,28,0,content,"PJ259_028_02_GCPL_CB4.txt: expected two positive-current stages, found 1",105.0
+PJ261,25,2,content,PJ261_025_09_GEIS_CB6.txt: empty table,95.0
+PJ261,25,3,content,PJ261_025_13_GEIS_CB6.txt: empty table,96.0
+PJ262,25,2,content,PJ262_025_09_GEIS_CB7.txt: empty table,95.0
+PJ262,25,3,content,PJ262_025_13_GEIS_CB7.txt: empty table,96.0
+PJ264,13,0,content,"PJ264_013_02_GCPL_CA1.txt: expected two positive-current stages, found 1",45.0
+PJ264,19,1,content,PJ264_019_05_GEIS_CB8.txt: empty table,70.0
+PJ264,19,2,content,PJ264_019_09_GEIS_CB8.txt: empty table,71.0
+PJ264,19,3,content,PJ264_019_13_GEIS_CB8.txt: empty table,72.0
+PJ264,20,3,content,"PJ264_020_14_GCPL_CA1.txt: expected two positive-current stages, found 1",76.0
+PJ264,21,3,content,"PJ264_021_14_GCPL_CA1.txt: expected two positive-current stages, found 1",80.0
+PJ264,29,2,content,PJ264_029_09_GEIS_CA1.txt: empty table,111.0
+PJ264,29,3,content,PJ264_029_13_GEIS_CA1.txt: empty table,112.0
+PJ265,17,1,content,"PJ265_017_06_GCPL_CA2.txt: expected two positive-current stages, found 1",62.0
+PJ265,29,3,content,PJ265_029_13_GEIS_CA2.txt: empty table,112.0
+PJ266,16,2,content,"PJ266_016_09_GEIS_CA3.txt: frequency support [-0.275, 3.996] does not cover [-1.660, 3.900]",59.0
+PJ266,16,3,content,PJ266_016_13_GEIS_CA3.txt: empty table,60.0
+PJ269,17,3,content,PJ269_017_13_GEIS_CA6.txt: empty table,64.0
+PJ269,27,1,content,PJ269_027_08_GCPL_CA6.txt: empty table,102.0
+PJ269,27,2,content,PJ269_027_09_GEIS_CA6.txt: empty table,103.0
+PJ269,27,3,content,PJ269_027_13_GEIS_CA6.txt: empty table,104.0
+PJ271,28,1,content,PJ271_028_08_GCPL_CA8.txt: empty table,106.0
+PJ271,28,2,content,PJ271_028_09_GEIS_CA8.txt: empty table,107.0
+PJ271,28,3,content,PJ271_028_13_GEIS_CA8.txt: empty table,108.0
+PJ273,28,1,content,PJ273_028_08_GCPL_CB2.txt: empty table,106.0
+PJ273,28,2,content,PJ273_028_09_GEIS_CB2.txt: empty table,107.0
+PJ273,28,3,content,PJ273_028_13_GEIS_CB2.txt: empty table,108.0
+PJ274,17,3,content,PJ274_017_16_GCPL_CB3.txt: empty table,64.0
+PJ274,27,1,content,PJ274_027_05_GEIS_CB3.txt: empty table,102.0
+PJ274,27,2,content,PJ274_027_09_GEIS_CB3.txt: empty table,103.0
+PJ274,27,3,content,PJ274_027_13_GEIS_CB3.txt: empty table,104.0
+PJ275,17,3,content,"PJ275_017_13_GEIS_CB4.txt: frequency support [-0.275, 3.996] does not cover [-1.660, 3.900]",64.0
+PJ275,27,1,content,"PJ275_027_05_GEIS_CB4.txt: frequency support [-0.885, 3.996] does not cover [-1.660, 3.900]",102.0
+PJ275,27,2,content,PJ275_027_09_GEIS_CB4.txt: empty table,103.0
+PJ275,27,3,content,PJ275_027_13_GEIS_CB4.txt: empty table,104.0
+PJ277,13,2,content,PJ277_013_12_GCPL_CB6.txt: empty table,47.0
+PJ277,13,3,content,PJ277_013_13_GEIS_CB6.txt: empty table,48.0
+PJ277,21,1,content,"PJ277_021_06_GCPL_CB6.txt: expected two positive-current stages, found 1",78.0
+PJ278,4,3,content,"PJ278_004_14_GCPL_CB7.txt: expected two positive-current stages, found 0",12.0
+PJ278,25,3,content,PJ278_025_16_GCPL_CB7.txt: empty table,96.0
+PJ279,21,3,content,"PJ279_021_14_GCPL_CB8.txt: expected two positive-current stages, found 3",80.0
+PJ279,24,3,content,"PJ279_024_14_GCPL_CB8.txt: expected two positive-current stages, found 1",92.0

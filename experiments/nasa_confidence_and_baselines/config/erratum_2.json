@@ -1,0 +1,8 @@
+{
+  "erratum": 2,
+  "scope": "evaluation code only; the protocol and its four predictions are unchanged",
+  "what_was_wrong": "The P2/P3/P4 verdicts were computed against the channel name 'collision', which erratum 1 renamed to 'adversarial'. The filter matched nothing, so P3 was reported False and P4 True on an empty set.",
+  "how_it_was_caught": "The printed table showed a likelihood-ratio rule at balanced accuracy 0.943 with worst-case unsafe-to-Certify 0.747 on the adversarial channel, which is P3 by definition, while the verdict line said P3 was False.",
+  "correction": "The filter now names the adversarial channel. P3 is True and P4 is False.",
+  "note": "Both errata were caught because the predictions were written down before the run. Neither changes a measured number."
+}

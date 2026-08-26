@@ -1,0 +1,63 @@
+{
+  "E1": [
+    {
+      "registration": "unit",
+      "models": 1266,
+      "median_n": 590.0,
+      "max_tv_radius": 0.2115503997671421,
+      "delta_plugin": 0.14941916272674804,
+      "delta_lower_slack": 0.0,
+      "delta_lower_exact": null,
+      "verdict": "vacuous"
+    },
+    {
+      "registration": "cell",
+      "models": 92,
+      "median_n": 10516.0,
+      "max_tv_radius": 0.19007665310933355,
+      "delta_plugin": 0.28107404196864816,
+      "delta_lower_slack": 0.007035569363062905,
+      "delta_lower_exact": null,
+      "verdict": "non-vacuous"
+    },
+    {
+      "registration": "cohort",
+      "models": 6,
+      "median_n": 152219.0,
+      "max_tv_radius": 0.0075059377443780365,
+      "delta_plugin": 0.49175587551201944,
+      "delta_lower_slack": 0.47962837498163574,
+      "delta_lower_exact": 0.4798801904538657,
+      "verdict": "non-vacuous"
+    }
+  ],
+  "E2": {
+    "n_pairs": 389664,
+    "min_pairwise_tv": 0.152643991804277,
+    "quantiles": {
+      "0.001": 0.24461511346616993,
+      "0.01": 0.3075485075408407,
+      "0.05": 0.3853081813229641
+    },
+    "per_policy": [
+      {
+        "policy": "skew_high",
+        "models": 394,
+        "min_pairwise_tv": 0.16978859698241505,
+        "hull_delta_1": 0.16861208746031742
+      },
+      {
+        "policy": "skew_low",
+        "models": 489,
+        "min_pairwise_tv": 0.1935059720123083,
+        "hull_delta_1": 0.18445386097630584
+      },
+      {
+        "policy": "uniform",
+        "models": 383,
+        "min_pairwise_tv": 0.1810788289796975,
+        "hull_delta_1": 0.1803257643602511
+      }
+    ]
+  }
+}

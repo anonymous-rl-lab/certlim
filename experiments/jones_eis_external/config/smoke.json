@@ -1,0 +1,19 @@
+{
+  "dataset": "Jones et al. EIS chemistry2, 35C",
+  "record_doi": "10.5281/zenodo.6645536",
+  "record_version": 2,
+  "license": "CC-BY-4.0",
+  "archive": "chemistry2-35C.zip",
+  "archive_md5": "6738937229d9343ede313a4895dc4312",
+  "author_code_commit": "b5c865e25c4a08991e2826d928b30d6d808bf858",
+  "n_frequency": 100,
+  "gates": {
+    "minimum_cells": 16,
+    "minimum_complete_cycles": 1400,
+    "minimum_cycles_per_cell": 75,
+    "minimum_completeness": 0.90,
+    "minimum_chronology_rate": 0.99,
+    "minimum_eis_rows": 40,
+    "minimum_action_std_ma": 1.0
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "G1_bound": {
+    "passed": true,
+    "n_checked": 30,
+    "max_excess": -1.3877787807814457e-17,
+    "min_slack": 1.3877787807814457e-17
+  },
+  "G3_monotone": {
+    "passed": true,
+    "claim": "Delta_E(n) and D_{alpha,beta}(E,n) both non-decreasing in n  [Thm 1(2), eq 22b]",
+    "per_K": [
+      {
+        "K": 2,
+        "max_decrease_Delta": 1.3877787807814457e-17,
+        "max_decrease_D": 5.551115123125783e-17
+      },
+      {
+        "K": 4,
+        "max_decrease_Delta": -0.032990648517904314,
+        "max_decrease_D": -0.00771158252165699
+      },
+      {
+        "K": 8,
+        "max_decrease_Delta": -0.028634425768361393,
+        "max_decrease_D": -0.017537254913455563
+      }
+    ],
+    "as_registered_passed": false,
+    "as_registered_note": "the registered wording said non-increasing; see config/errata_corrections.json E1"
+  },
+  "G4_gate_nstar_sion": {
+    "passed": true,
+    "definition": "G_E(n) = 1{Delta_E(n) = 0};  n* = inf{n : G_E(n) = 0}   [eq 19, 23]",
+    "gate_function": {
+      "2": {
+        "n": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10,
+          12,
+          15,
+          20
+        ],
+        "G": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "non_increasing": true
+      },
+      "4": {
+        "n": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10,
+          12,
+          15,
+          20
+        ],
+        "G": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "non_increasing": true
+      },
+      "8": {
+        "n": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10
+        ],
+        "G": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "non_increasing": true
+      }
+    },
+    "n_star": {
+      "2": 3,
+      "4": 2,
+      "8": 1
+    },
+    "max_sion_error": 5.0159762149393217e-08,
+    "sion_tolerance": 1e-06,
+    "max_sion_error_excluding_K8_n10": 2.6406508785159488e-08,
+    "as_registered_note": "registered n* used the wrong inequality and a 1e-8 Sion tolerance below the solver feasibility tolerance; see errata E2, E3"
+  },
+  "permanent_obstruction": {
+    "theorem": "G_E(n)=1 for all n  <=>  exists theta_S,theta_U with P_{theta_S}=P_{theta_U}  [eq 24]",
+    "per_K": {
+      "2": {
+        "min_pairwise_TV": 0.003968253968253954,
+        "exact_pairwise_collision": false,
+        "Delta_1": 2.7755575615628914e-17,
+        "hulls_intersect_at_1": true,
+        "n_star": 3
+      },
+      "4": {
+        "min_pairwise_TV": 0.11363636363636363,
+        "exact_pairwise_collision": false,
+        "Delta_1": 1.1102230246251565e-16,
+        "hulls_intersect_at_1": true,
+        "n_star": 2
+      },
+      "8": {
+        "min_pairwise_TV": 0.1213768115942029,
+        "exact_pairwise_collision": false,
+        "Delta_1": 0.04540598290598562,
+        "hulls_intersect_at_1": false,
+        "n_star": 1
+      }
+    },
+    "consistent": true,
+    "reading": "where hulls intersect at n=1 without an exact pairwise collision, the obstruction is purely compositional and must close at a finite n* -- the chapter says so explicitly and this is the direct empirical instance of it"
+  },
+  "G2_attained": {
+    "passed": true,
+    "closest_real_pair": [
+      "battery01",
+      "battery41"
+    ],
+    "pair_TV_1sample": 0.11363636363636363,
+    "max_Delta": 4.891920202254596e-16,
+    "max_abs_error": 6.938893903907228e-17,
+    "note": "collision experiment: Delta = 0 at every n and D = alpha+beta exactly"
+  },
+  "G6_data_processing": {
+    "passed": true,
+    "chain": [
+      {
+        "refine": 8,
+        "coarse": 4,
+        "max_violation": -0.03513554793305451
+      },
+      {
+        "refine": 4,
+        "coarse": 2,
+        "max_violation": -8.326672684688674e-17
+      }
+    ],
+    "tautology_abs_error": 0.0,
+    "n_shared": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10
+    ]
+  },
+  "G9_heldout_packs": {
+    "passed": true,
+    "halves": [
+      {
+        "half": 0,
+        "n_S": 3,
+        "n_U": 2,
+        "skipped": false,
+        "max_excess": -0.08981377889825538,
+        "Delta_1": 0.09665620775916395,
+        "Delta_last": 0.545425754574622
+      },
+      {
+        "half": 1,
+        "n_S": 3,
+        "n_U": 3,
+        "skipped": false,
+        "max_excess": -0.0952980706092769,
+        "Delta_1": 0.10826103357223985,
+        "Delta_last": 0.4526548566976945
+      }
+    ],
+    "split": "pack id last digit parity"
+  },
+  "_errata": {
+    "applies_to": "config/registered_v02.json",
+    "reason": "three errors in the registered gate text, all found after the first run. None is a threshold retune: E1 and E2 reverse an inequality I wrote backwards relative to Theorem 1(2)-(3) of the theory chapter; E3 replaces a numerical tolerance that was below the LP solver's own feasibility tolerance and therefore unachievable by construction. Both the original and the corrected verdicts are reported.",
+    "E1_G3_direction": {
+      "registered": "Delta_E(n) non-increasing in n",
+      "correct": "Delta_E(n) non-DECREASING in n; hence the gate G_E(n)=1{Delta_E(n)=0} is non-increasing",
+      "source": "theory chapter Thm 1(2), eq (22b) and the paragraph at line 349",
+      "note": "Delta_E(n) is the separation available from n samples, so it grows with n. The registered wording had it backwards. The v02 run under the registered wording is reported as FAILED and is kept in results/gates_v02_asregistered.json."
+    },
+    "E2_G4_nstar": {
+      "registered": "n* = min{n : Delta_E(n) <= 0.05}",
+      "correct": "n* = inf{n : G_E(n) = 0} = inf{n : Delta_E(n) > 0}   [eq (23)]",
+      "source": "theory chapter eq (19), (20), (23)"
+    },
+    "E3_sion_tolerance": {
+      "registered": "|gamma*(n) - Delta_E(n)/2| <= 1e-8",
+      "correct": "<= 1e-6",
+      "reason": "HiGHS default primal/dual feasibility tolerance is 1e-7, so 1e-8 is not achievable on the largest LPs (K=8, n=10, 19448 count states). The per-n error is reported in results/frontier_v02.csv so the reader can see it is confined to the largest problems."
+    },
+    "E4_permanent_obstruction_wording": {
+      "registered": "Delta_E(n)=Delta_E(1)=0 for all n  <=>  hulls collide at n=1",
+      "correct": "G_E(n)=1 for all n  <=>  there exist theta_S, theta_U with P_{theta_S} = P_{theta_U} exactly (an exact PAIRWISE single-sample collision), eq (24)",
+      "note": "Hull intersection at n=1 is necessary but NOT sufficient for permanent obstruction; a purely compositional intersection can dissolve at higher n. The chapter states this explicitly (line 738). The script now tests the correct statement and reports min pairwise TV."
+    },
+    "numeric_zero_tolerance": 1e-09,
+    "sion_tolerance": 1e-06
+  }
+}

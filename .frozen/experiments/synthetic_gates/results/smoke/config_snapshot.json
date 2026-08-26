@@ -1,0 +1,54 @@
+{
+  "contract": {
+    "alpha": 0.05,
+    "beta": 0.05,
+    "evidence_old": [
+      "A",
+      "H"
+    ],
+    "evidence_proxy": [
+      "A",
+      "H",
+      "W"
+    ],
+    "experiment_version": "v04-gates-0.1.0",
+    "finite_block_safe_models": [
+      0.25,
+      0.75
+    ],
+    "finite_block_unsafe_models": [
+      0.5
+    ],
+    "hazard_event": "H=1",
+    "numerical_tolerance": 1e-08,
+    "preregistered_landmarks": {
+      "delta_1": 0.0,
+      "delta_2": 0.125,
+      "gamma_2": 0.0625,
+      "hoeffding_optimal_block_n": 14,
+      "hoeffding_optimal_total_n": 266,
+      "n_star": 2,
+      "no_alert_min_n": 47
+    },
+    "theory_artifact": "Theory_Chapter_Safety_Certification_Limits_v04.md",
+    "theory_version": "v04"
+  },
+  "smoke": {
+    "delta_n_max": 16,
+    "description": "Deterministic algebra, LP, and exact-distribution audit; no Monte Carlo claims.",
+    "dual_n_max": 16,
+    "expected_runtime_minutes": 10,
+    "q_values": [
+      0.05,
+      0.2,
+      0.45
+    ],
+    "random_seeds": [],
+    "run_monte_carlo": false,
+    "s_values": [
+      0.05,
+      0.2,
+      0.45
+    ]
+  }
+}

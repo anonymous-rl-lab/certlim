@@ -1,0 +1,75 @@
+{
+  "status": "FAIL",
+  "interpretation": "cross-temperature development gate; 35C was never used for fitting or calibration",
+  "training_rows": 3521,
+  "training_cells": 32,
+  "external_rows": 1597,
+  "external_cells": 16,
+  "training_endpoint_prevalence": 0.7000852030673104,
+  "external_endpoint_prevalence": 0.43832185347526614,
+  "median_metrics": {
+    "actions": {
+      "rmse": 0.211595976340035,
+      "mae": 0.18564476944130043,
+      "r2": 0.1786572575159091,
+      "auc": 0.9368752986144291,
+      "brier": 0.1458644630397317,
+      "coverage": 0.9461490294301816,
+      "balanced_decisiveness": 0.919732441471572,
+      "unsafe_certify_error": 0.017142857142857144,
+      "safe_reject_error": 0.24972129319955408
+    },
+    "eis_actions": {
+      "rmse": 0.10288919190188676,
+      "mae": 0.08382241139287626,
+      "r2": 0.8058000442916669,
+      "auc": 0.7315209428252906,
+      "brier": 0.22594258702184422,
+      "coverage": 0.9160926737633062,
+      "balanced_decisiveness": 0.8871428571428571,
+      "unsafe_certify_error": 0.7,
+      "safe_reject_error": 0.07023411371237458
+    },
+    "old_history": {
+      "rmse": 0.16603853759832501,
+      "mae": 0.14898230360533846,
+      "r2": 0.4942598730218165,
+      "auc": 0.9672941551202421,
+      "brier": 0.11895792068050355,
+      "coverage": 1.0,
+      "balanced_decisiveness": 1.0,
+      "unsafe_certify_error": 0.01,
+      "safe_reject_error": 0.23411371237458195
+    },
+    "old_history_eis": {
+      "rmse": 0.09471057148620729,
+      "mae": 0.0791930897655934,
+      "r2": 0.8354467257103153,
+      "auc": 0.8501385570950788,
+      "brier": 0.19371858418730792,
+      "coverage": 0.9229805886036319,
+      "balanced_decisiveness": 0.8457142857142858,
+      "unsafe_certify_error": 0.5214285714285715,
+      "safe_reject_error": 0.027870680044593088
+    },
+    "old_history_eis_permuted": {
+      "rmse": 0.11225815965610543,
+      "mae": 0.09527534071051887,
+      "r2": 0.7688225598894692,
+      "auc": 0.8233444816053512,
+      "brier": 0.1936017111394291,
+      "coverage": 0.9592986850344396,
+      "balanced_decisiveness": 0.9157142857142857,
+      "unsafe_certify_error": 0.68,
+      "safe_reject_error": 0.014492753623188406
+    }
+  },
+  "checks": {
+    "eis_actions_rmse_reduction_vs_actions": true,
+    "old_history_eis_rmse_reduction": true,
+    "old_history_eis_auc_gain": false,
+    "real_eis_beats_permuted_auc": true,
+    "balanced_decisiveness_gain": false,
+    "external_side_errors": false
+  }
+}

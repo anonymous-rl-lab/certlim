@@ -1,0 +1,13 @@
+{
+  "bootstrap_ci95": [
+    0.34545454545454546,
+    0.7227272727272728
+  ],
+  "bootstrap_median": 0.540909090909091,
+  "bootstrap_replicates": 2000,
+  "observed_delta_one": 0.5272727272727273,
+  "permutation_null_mean": 0.1700011593612437,
+  "permutation_null_q95": 0.2937562035686707,
+  "permutation_p": 0.001,
+  "permutations": 999
+}

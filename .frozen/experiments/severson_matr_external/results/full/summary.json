@@ -1,0 +1,29 @@
+{
+  "experiment": "severson_matr_external_certification_v01",
+  "runtime_seconds": 11.489856177999172,
+  "integrity": {
+    "split_counts": {
+      "calibration": 43,
+      "external": 40,
+      "fit": 41
+    },
+    "duplicate_ids": [],
+    "external_unsafe_n": 6,
+    "external_safe_n": 19,
+    "chronology_ok": true
+  },
+  "gates": {
+    "G0_integrity": true,
+    "G1_curve5_beats_scalar100": true,
+    "G2_curve5_beats_permuted": false,
+    "G3_nonvacuous_certification": true,
+    "G4_transport_calibration": false,
+    "qualifying_curve_menus": [
+      "curve100"
+    ],
+    "curve5_external_mape": 0.32875597130302897,
+    "scalar100_external_mape": 0.42925767494815864,
+    "curve5_permutation_median_mape": 0.33594424672344225,
+    "overall_pass": false
+  }
+}

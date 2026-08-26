@@ -1,0 +1,31 @@
+{
+  "checks": [
+    {
+      "D": 0.2516666666666667,
+      "delta": 0.5272727272727273,
+      "n": 1,
+      "released_D": 0.251666666667,
+      "released_delta": 0.527272727273
+    },
+    {
+      "D": 0.9999403491666663,
+      "delta": 0.9018820520138209,
+      "n": 6,
+      "released_D": 0.999940349167,
+      "released_delta": 0.901882052014
+    },
+    {
+      "D": 0.9999999861589608,
+      "delta": 0.9799162628716241,
+      "n": 12,
+      "released_D": 0.999999986159,
+      "released_delta": 0.979916262872
+    }
+  ],
+  "cohort_counts_match": true,
+  "max_decisiveness_absolute_error": 3.3373304120232206e-13,
+  "max_delta_absolute_error": 3.758104938356155e-13,
+  "pass": true,
+  "ten_soc_points_per_battery": true,
+  "unique_battery_soc_rows": true
+}

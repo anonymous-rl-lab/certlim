@@ -1,0 +1,69 @@
+{
+  "contract": {
+    "theory_artifact": "Theory_Chapter_Safety_Certification_Limits_v04.md",
+    "theory_version": "v04",
+    "experiment_version": "v04-gates-0.1.0",
+    "evidence_old": ["A", "H"],
+    "evidence_proxy": ["A", "H", "W"],
+    "hazard_event": "H=1",
+    "finite_block_safe_models": [0.25, 0.75],
+    "finite_block_unsafe_models": [0.5],
+    "alpha": 0.05,
+    "beta": 0.05,
+    "numerical_tolerance": 1e-08,
+    "preregistered_landmarks": {
+      "delta_1": 0.0,
+      "delta_2": 0.125,
+      "gamma_2": 0.0625,
+      "n_star": 2,
+      "no_alert_min_n": 47,
+      "hoeffding_optimal_block_n": 14,
+      "hoeffding_optimal_total_n": 266
+    }
+  },
+  "smoke": {
+    "description": "Deterministic algebra, LP, and exact-distribution audit; no Monte Carlo claims.",
+    "q_values": [0.05, 0.2, 0.45],
+    "s_values": [0.05, 0.2, 0.45],
+    "delta_n_max": 16,
+    "dual_n_max": 16,
+    "run_monte_carlo": false,
+    "expected_runtime_minutes": 10,
+    "random_seeds": []
+  },
+  "small": {
+    "description": "Exact frontier through n=128 plus seeded binomial validation of the registered proxy test.",
+    "q_values": [0.05, 0.1, 0.2, 0.3, 0.4, 0.45],
+    "s_values": [0.05, 0.15, 0.3, 0.45],
+    "delta_n_max": 128,
+    "dual_n_max": 48,
+    "proxy_sample_sizes": [16, 32, 64, 128, 256],
+    "simulations_per_seed": 2000,
+    "mc_sigma_multiplier": 5.0,
+    "mc_absolute_tolerance_floor": 0.01,
+    "run_monte_carlo": true,
+    "expected_runtime_minutes": 60,
+    "random_seeds": [
+      20260825,
+      20260826,
+      20260827,
+      20260828,
+      20260829,
+      20260830,
+      20260831,
+      20260832,
+      20260833,
+      20260834,
+      20260835,
+      20260836,
+      20260837,
+      20260838,
+      20260839,
+      20260840,
+      20260841,
+      20260842,
+      20260843,
+      20260844
+    ]
+  }
+}

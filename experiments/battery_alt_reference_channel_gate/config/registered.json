@@ -1,0 +1,20 @@
+{
+  "experiment": "nasa_battery_alt_gate_v01",
+  "dataset_url": "https://data.nasa.gov/docs/legacy/battery_alt_dataset.zip",
+  "dataset_license": "MIT",
+  "seed": 20260826,
+  "mission": {"gap_seconds": 60, "min_points": 5, "min_missions_per_theta": 30},
+  "hazard": {"rule": "max(temperature_battery) > 70", "unit": "degC",
+             "sensitivity": [60, 80], "voltage_hazard": "discarded: Vmin == -0.03 on 100% of missions"},
+  "action_bins_A": [0, 8, 11, 14, 17, 100],
+  "policies": {"uniform": [0.2,0.2,0.2,0.2,0.2], "heavy": [0.05,0.10,0.15,0.35,0.35],
+               "light": [0.35,0.35,0.15,0.10,0.05]},
+  "grades": {"from": "tertiles of pooled Psi over all (theta,pi), set before any Delta/D computation"},
+  "evidence": {"symbol": "2*(A_bin>=4) + H", "K_primary": 4, "K_sensitivity": [2,4,8]},
+  "test": {"alpha": 0.05, "beta": 0.05, "n_grid": [1,2,3,4,5,6,8,10,12,15,20]},
+  "null_calibration": {"label_permutations": 500, "block_unit": "pack"},
+  "rw_holdout": {"source_arm": "uniform", "target_policies": ["skew_high","skew_low"],
+                 "max_abs_bias": 0.05, "min_spearman": 0.7, "bootstrap": 1000},
+  "gates": ["G1_bound","G2_attained","G3_monotone","G4_nstar_sion",
+            "G5_policy_switch","G6_data_processing","G7_rw_holdout"]
+}

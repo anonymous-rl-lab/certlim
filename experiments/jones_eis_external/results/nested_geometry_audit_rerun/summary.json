@@ -1,0 +1,81 @@
+{
+  "status": "COMPLETE",
+  "classification": "exploratory finite-domain plug-in diagnostic; structural invariants are not empirical success gates",
+  "method": "new symbol is the Cartesian pair (old-history bin, EIS bin); marginalizing the EIS bin exactly recovers the old-history symbol",
+  "warning": "nested dominance is a structural invariant, not empirical evidence that EIS is informative",
+  "aggregate": {
+    "old_history_n1": {
+      "median": 0.18793103448275858,
+      "min": 0.17999999999999997,
+      "max": 0.1879310344827586
+    },
+    "old_history_n2": {
+      "median": 0.22440278988666085,
+      "min": 0.19999999999999996,
+      "max": 0.22440278988666088
+    },
+    "old_history_n3": {
+      "median": 0.311923182441701,
+      "min": 0.296,
+      "max": 0.31192318244170103
+    },
+    "old_history_eis_nested_n1": {
+      "median": 0.24021479713603816,
+      "min": 0.23613861386138615,
+      "max": 0.2672853828306264
+    },
+    "old_history_eis_nested_n2": {
+      "median": 0.4304788018433178,
+      "min": 0.4170956201214224,
+      "max": 0.45328394738077715
+    },
+    "old_history_eis_nested_n3": {
+      "median": 0.5357020486261562,
+      "min": 0.5191234018131178,
+      "max": 0.5693283267283574
+    },
+    "old_history_eis_permuted_nested_n1": {
+      "median": 0.25,
+      "min": 0.24999999999999994,
+      "max": 0.2545454545454545
+    },
+    "old_history_eis_permuted_nested_n2": {
+      "median": 0.3878100775193799,
+      "min": 0.3840771812080537,
+      "max": 0.3878100775193799
+    },
+    "old_history_eis_permuted_nested_n3": {
+      "median": 0.4769583333333328,
+      "min": 0.4753958333333332,
+      "max": 0.476958333333333
+    }
+  },
+  "real_vs_permuted_contrast": {
+    "1": {
+      "median_real_minus_permuted": -0.009785202863961812,
+      "minimum": -0.013861386138613846,
+      "maximum": 0.012739928285171898,
+      "positive_seeds": 1,
+      "n_seeds": 5
+    },
+    "2": {
+      "median_real_minus_permuted": 0.04266872432393792,
+      "minimum": 0.029285542602042525,
+      "maximum": 0.06920676617272348,
+      "positive_seeds": 5,
+      "n_seeds": 5
+    },
+    "3": {
+      "median_real_minus_permuted": 0.058743715292823406,
+      "minimum": 0.042165068479784795,
+      "maximum": 0.09393249339502424,
+      "positive_seeds": 5,
+      "n_seeds": 5
+    }
+  },
+  "structural_invariants": {
+    "nested_eis_dominates_old": true,
+    "nested_permuted_dominates_old": true,
+    "block_monotonicity": true
+  }
+}

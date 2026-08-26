@@ -1,0 +1,8 @@
+{
+  "max_n_run": 20,
+  "G1_bound": true,
+  "G2_attained": null,
+  "G3_monotone": true,
+  "n_star": 1,
+  "sion_max_residual": 4.318862034669024e-08
+}

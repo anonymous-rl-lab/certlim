@@ -1,0 +1,36 @@
+{
+  "registration_id": "SENS-E1-E2-robustness",
+  "layer": "corrected diagnostic",
+  "cannot_reverse": "the registered E1 and E2 verdicts. This analysis characterises how much of E1's positive certificate and E2's negative census survives changing one assumption at a time.",
+  "frozen_before_any_outcome_was_computed": true,
+
+  "E1_axes": {
+    "concentration_inequality": [
+      {"name": "BHC",       "eps": "sqrt(2*(K*ln2 + ln(2M/eta))/n)", "note": "as registered in E1"},
+      {"name": "Weissman",  "eps": "sqrt(2*(ln(2^K-2) + ln(M/eta))/n)", "note": "tighter L1 bound for finite alphabets"},
+      {"name": "bootstrap", "eps": "empirical simultaneous quantile of ||phat-p||_1 under parametric multinomial resampling", "note": "NOT a bound; shows how conservative the bounds are"}
+    ],
+    "eta": [0.01, 0.05, 0.10],
+    "delta_lower_solver": ["slack (Delta - max rho_S - max rho_U)", "exact LP over the expanded vertex set"],
+    "jackknife": "leave one cell out at the cohort registration, 28 refits"
+  },
+
+  "E2_axes": {
+    "grade_thresholds": [[0.15, 0.35], [0.10, 0.40], [0.20, 0.30], [0.125, 0.375]],
+    "note": "the registered pair is [0.15, 0.35]; a near-collision could be hiding just outside the registered extreme classes"
+  },
+
+  "predictions_registered_in_advance": {
+    "S1": "The cohort registration stays non-vacuous under every inequality and every eta. If it does not, E1's positive result is an artefact of the chosen bound.",
+    "S2": "The unit registration stays vacuous under every inequality and every eta.",
+    "S3": "The slack bound and the exact LP agree to within 0.01 at every registration where the LP is solvable.",
+    "S4": "No leave-one-cell-out refit at the cohort registration turns the certificate vacuous.",
+    "S5": "The minimum cross-grade pairwise TV stays above 0.05 at every threshold pair, i.e. E2's 'no natural near-collision' does not depend on where the buffer was cut."
+  },
+
+  "prohibited": [
+    "Selecting the inequality, eta, or threshold pair that gives the most favourable certificate and reporting only that.",
+    "Using the bootstrap radius as if it were a bound; it is reported only to show how much the bounds give away.",
+    "Letting any outcome here change the E1 or E2 registration."
+  ]
+}

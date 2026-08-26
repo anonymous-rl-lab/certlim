@@ -1,0 +1,60 @@
+{
+  "protocol_status": "locked_after_feasibility_probe",
+  "dataset": {
+    "name": "PulseBat processed 5-second-pulse data",
+    "upstream_commit": "92aeb9b8a26bc337164401411271fa8eeadf605c",
+    "included_chemistries": ["LMO10", "LFP35"],
+    "excluded": {
+      "NMC2p1": "67 records are repeated degradation snapshots from 12 physical cells",
+      "NMC21": "only one battery enters the registered unqualified class"
+    }
+  },
+  "qualification": {
+    "functional": "capacity loss risk R = 1 - SOH",
+    "safe": "SOH >= 0.90 (R <= 0.10)",
+    "unsafe": "SOH <= 0.80 (R >= 0.20)",
+    "buffer": "0.80 < SOH < 0.90",
+    "semantics": "registered high-retained-capacity second-life service qualification"
+  },
+  "evidence": {
+    "soc_percent": 5,
+    "quantizer_bins": 4,
+    "quantizer_calibration": "within-chemistry quartiles over every battery, without SOH labels or grade filtering",
+    "dirichlet_pseudocount": 0.5,
+    "menus": {
+      "nameplate": "chemistry, nominal capacity, format and historical-use cohort",
+      "ocv": "U1 after 10-minute rest",
+      "pulse_0p5C": "U3-U7 across the positive and negative 0.5C pulses",
+      "pulse_1C": "U11-U15 across the positive and negative 1C pulses",
+      "pulse_1p5C": "U19-U21 across the positive 1.5C pulse and relaxation"
+    }
+  },
+  "physical_cost_seconds_per_battery": {
+    "nameplate": 0,
+    "ocv": 780,
+    "pulse_0p5C": 940,
+    "pulse_1C": 1100,
+    "pulse_1p5C": 1180
+  },
+  "maximum_c_rate": {
+    "nameplate": 0,
+    "ocv": 0,
+    "pulse_0p5C": 0.5,
+    "pulse_1C": 1.0,
+    "pulse_1p5C": 1.5
+  },
+  "errors": {"alpha": 0.05, "beta": 0.05},
+  "n_grid": [1, 2, 3, 4, 5, 6, 8, 10, 12],
+  "random_seed": 20260826,
+  "permutations": 999,
+  "bootstrap_replicates": 2000,
+  "gates": {
+    "G0_class_support": "at least 8 independent batteries in every chemistry-by-grade cohort",
+    "G1_nameplate_collision": "nameplate Delta=0 and D=alpha+beta at every n",
+    "G2_pulse_gate": "pulse_0p5C Delta(1)>=0.40, Delta is nondecreasing, and D(6)>=0.95",
+    "G3_main_bound": "D<=alpha+beta+Delta for every menu and n",
+    "G4_low_stress_dominance": "pulse_0p5C has no smaller Delta than the higher-stress menus at every n",
+    "G5_uncertainty": "permutation p<=0.01 and battery-level bootstrap lower 95% bound for pulse_0p5C Delta(1)>0.25"
+  }
+}
+

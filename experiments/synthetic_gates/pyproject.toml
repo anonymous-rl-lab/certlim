@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "causal-safety-certification-gates-v04"
+version = "0.1.0"
+description = "Exact and finite-sample gates for the v04 causal safety certification theory"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24,<3",
+  "pandas>=1.5,<3",
+  "scipy>=1.10,<2",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

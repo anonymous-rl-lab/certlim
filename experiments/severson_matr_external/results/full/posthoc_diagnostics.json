@@ -1,0 +1,44 @@
+{
+  "permutation_stats": {
+    "curve5": {
+      "observed_mape": 0.3287559713030289,
+      "median_permuted_mape": 0.33594424672344225,
+      "improvement_vs_median": 0.02139722733912719,
+      "one_sided_randomization_p": 0.373134328358209
+    },
+    "curve100": {
+      "observed_mape": 0.2583645719160224,
+      "median_permuted_mape": 0.42919466051401367,
+      "improvement_vs_median": 0.39802472936965505,
+      "one_sided_randomization_p": 0.004975124378109453
+    }
+  },
+  "decision_counts": {
+    "protocol": {
+      "Alert": 37,
+      "Reject": 3,
+      "Certify": 0
+    },
+    "scalar5": {
+      "Alert": 28,
+      "Reject": 12,
+      "Certify": 0
+    },
+    "scalar100": {
+      "Alert": 8,
+      "Reject": 32,
+      "Certify": 0
+    },
+    "curve5": {
+      "Alert": 31,
+      "Reject": 9,
+      "Certify": 0
+    },
+    "curve100": {
+      "Alert": 32,
+      "Reject": 8,
+      "Certify": 0
+    }
+  },
+  "note": "Diagnostics do not alter frozen gates."
+}

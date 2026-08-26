@@ -1,0 +1,13 @@
+q,policy_action,model,risk,tau_safe,tau_unsafe,grade,expected_grade
+0.05,1,direct,0.95,0.65,0.8,unsafe,unsafe
+0.05,1,hidden,0.5,0.65,0.8,safe,safe
+0.05,0,direct,0.05,0.2,0.35,safe,safe
+0.05,0,hidden,0.5,0.2,0.35,unsafe,unsafe
+0.2,1,direct,0.8,0.6,0.7,unsafe,unsafe
+0.2,1,hidden,0.5,0.6,0.7,safe,safe
+0.2,0,direct,0.2,0.3,0.4,safe,safe
+0.2,0,hidden,0.5,0.3,0.4,unsafe,unsafe
+0.45,1,direct,0.55,0.5166666666666666,0.5333333333333333,unsafe,unsafe
+0.45,1,hidden,0.5,0.5166666666666666,0.5333333333333333,safe,safe
+0.45,0,direct,0.45,0.4666666666666667,0.48333333333333334,safe,safe
+0.45,0,hidden,0.5,0.4666666666666667,0.48333333333333334,unsafe,unsafe

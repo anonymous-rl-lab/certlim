@@ -1,0 +1,198 @@
+{
+  "D_absolute_hull_K4": {
+    "interpretation": "registered resolution, post-hoc geometry contrast",
+    "observed": {
+      "K": 4,
+      "null_mean": 0.036491575268507506,
+      "p_upper": 1.0,
+      "value": 1.1102230246251565e-16
+    },
+    "status": "NOT_ESTABLISHED"
+  },
+  "D_absolute_hull_K8": {
+    "interpretation": "registered resolution sensitivity, post-hoc geometry contrast",
+    "observed": {
+      "K": 8,
+      "null_mean": 0.13456418008318843,
+      "p_upper": 0.22338830584707647,
+      "value": 0.17857142857142858
+    },
+    "status": "NOT_ESTABLISHED"
+  },
+  "D_channel_gain_K4": {
+    "interpretation": "pipeline-specific; independently compressed menus are not sigma-algebra nested",
+    "observed": {
+      "pairing_p_upper": 1.0,
+      "redundancy_pipeline_floor": 0.11290322580645148,
+      "relax_gain": -1.1102230246251565e-16
+    },
+    "status": "NOT_ESTABLISHED"
+  },
+  "D_channel_gain_K8": {
+    "interpretation": "pipeline-specific; independently compressed menus are not sigma-algebra nested",
+    "observed": {
+      "pairing_p_upper": 0.39800995024875624,
+      "redundancy_pipeline_floor": 0.14809523809523809,
+      "relax_gain": 0.07142857142857142
+    },
+    "status": "NOT_ESTABLISHED"
+  },
+  "D_low_support_leverage_K4": {
+    "interpretation": "low-support finite-sample leverage, not a population theorem",
+    "observed": {
+      "K": 4,
+      "null_mean": 0.014551779941792969,
+      "p_upper": 0.0014992503748125937,
+      "value": 0.16743119266055034
+    },
+    "status": "SUPPORTED_DIAGNOSTIC"
+  },
+  "D_low_support_leverage_K8": {
+    "interpretation": "low-support finite-sample leverage, not a population theorem",
+    "observed": {
+      "K": 8,
+      "null_mean": 0.01528124036819255,
+      "p_upper": 0.0004997501249375312,
+      "value": 0.339260240472794
+    },
+    "status": "SUPPORTED_DIAGNOSTIC"
+  },
+  "D_nested_coarsening_sanity": {
+    "interpretation": "structural code sanity check, not external evidence for P1",
+    "observed": [
+      {
+        "K": 8,
+        "delta": 0.17857142857142858,
+        "monotone": true
+      },
+      {
+        "K": 4,
+        "delta": 1.1102230246251565e-16,
+        "monotone": true
+      },
+      {
+        "K": 2,
+        "delta": 2.7755575615628914e-17,
+        "monotone": true
+      }
+    ],
+    "status": "PASS"
+  },
+  "D_pairwise_hull_gap_K4": {
+    "interpretation": "registered resolution, post-hoc geometry contrast",
+    "observed": {
+      "K": 4,
+      "null_mean": 0.08640209356266133,
+      "p_upper": 0.0074962518740629685,
+      "value": 0.2499999999999999
+    },
+    "status": "SUPPORTED_DIAGNOSTIC"
+  },
+  "D_pairwise_hull_gap_K8": {
+    "interpretation": "registered resolution sensitivity, post-hoc geometry contrast",
+    "observed": {
+      "K": 8,
+      "null_mean": 0.1077739692674609,
+      "p_upper": 0.01649175412293853,
+      "value": 0.24999999999999997
+    },
+    "status": "SUPPORTED_DIAGNOSTIC"
+  },
+  "overall": {
+    "confirmatory_external_gate": false,
+    "reason": "selective thresholds and post-hoc geometry contrasts preclude confirmatory interpretation",
+    "status": "DIAGNOSTIC_ONLY"
+  },
+  "support_thresholds": [
+    {
+      "K": 4,
+      "hull_delta": 1.1102230246251565e-16,
+      "min_pairwise_tv": 0.25,
+      "minimum_domain_n": 1,
+      "n_safe_domains": 5,
+      "n_unsafe_domains": 2,
+      "pairwise_minus_hull": 0.2499999999999999
+    },
+    {
+      "K": 4,
+      "hull_delta": 0.16743119266055045,
+      "min_pairwise_tv": 0.25,
+      "minimum_domain_n": 3,
+      "n_safe_domains": 4,
+      "n_unsafe_domains": 2,
+      "pairwise_minus_hull": 0.08256880733944955
+    },
+    {
+      "K": 4,
+      "hull_delta": 0.2704081632653061,
+      "min_pairwise_tv": 0.3928571428571428,
+      "minimum_domain_n": 5,
+      "n_safe_domains": 3,
+      "n_unsafe_domains": 2,
+      "pairwise_minus_hull": 0.1224489795918367
+    },
+    {
+      "K": 4,
+      "hull_delta": 0.2704081632653061,
+      "min_pairwise_tv": 0.3928571428571428,
+      "minimum_domain_n": 8,
+      "n_safe_domains": 2,
+      "n_unsafe_domains": 2,
+      "pairwise_minus_hull": 0.1224489795918367
+    },
+    {
+      "K": 4,
+      "hull_delta": 0.3928571428571428,
+      "min_pairwise_tv": 0.3928571428571428,
+      "minimum_domain_n": 10,
+      "n_safe_domains": 2,
+      "n_unsafe_domains": 1,
+      "pairwise_minus_hull": 0.0
+    },
+    {
+      "K": 8,
+      "hull_delta": 0.17857142857142858,
+      "min_pairwise_tv": 0.42857142857142855,
+      "minimum_domain_n": 1,
+      "n_safe_domains": 5,
+      "n_unsafe_domains": 2,
+      "pairwise_minus_hull": 0.24999999999999997
+    },
+    {
+      "K": 8,
+      "hull_delta": 0.5178316690442226,
+      "min_pairwise_tv": 0.5714285714285714,
+      "minimum_domain_n": 3,
+      "n_safe_domains": 4,
+      "n_unsafe_domains": 2,
+      "pairwise_minus_hull": 0.05359690238434878
+    },
+    {
+      "K": 8,
+      "hull_delta": 0.5178316690442226,
+      "min_pairwise_tv": 0.5714285714285714,
+      "minimum_domain_n": 5,
+      "n_safe_domains": 3,
+      "n_unsafe_domains": 2,
+      "pairwise_minus_hull": 0.05359690238434878
+    },
+    {
+      "K": 8,
+      "hull_delta": 0.5201446280991736,
+      "min_pairwise_tv": 0.5714285714285714,
+      "minimum_domain_n": 8,
+      "n_safe_domains": 2,
+      "n_unsafe_domains": 2,
+      "pairwise_minus_hull": 0.051283943329397785
+    },
+    {
+      "K": 8,
+      "hull_delta": 0.5714285714285714,
+      "min_pairwise_tv": 0.5714285714285714,
+      "minimum_domain_n": 10,
+      "n_safe_domains": 2,
+      "n_unsafe_domains": 1,
+      "pairwise_minus_hull": 0.0
+    }
+  ]
+}

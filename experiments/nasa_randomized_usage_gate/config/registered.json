@@ -1,0 +1,20 @@
+{
+  "experiment": "nasa_randomized_usage_gate_v01",
+  "dataset_doi": "10.5281/zenodo.15277374",
+  "seed": 20260826,
+  "include": {"action_support_A": [1,2,3,4], "max_V0": 4.0,
+              "state_bin_edges": [0,3.55,3.7,3.85,4.0], "min_steps_per_theta": 150,
+              "min_steps_per_cell_of_ZA": 5},
+  "hazard": {"rule": "Vend <= 3.25", "meaning": "protection cutoff engaged"},
+  "policies": {"uniform": [0.25,0.25,0.25,0.25], "skew_high": [0.05,0.20,0.15,0.60],
+               "skew_low": [0.25,0.60,0.10,0.05]},
+  "grades": {"psi_safe_max": 0.15, "psi_unsafe_min": 0.35,
+             "sensitivity": [[0.20,0.40],[0.25,0.45]],
+             "thresholds_from": "tertiles of pooled Psi over all (theta,pi), set before any Delta/D computation"},
+  "evidence": {"symbol": "2*(A>=3) + H", "K_primary": 4, "K_sensitivity": [2,4,8]},
+  "test": {"alpha": 0.05, "beta": 0.05, "n_grid": [1,2,3,4,5,6,8,10,12,15,20,25,30]},
+  "null_calibration": {"label_permutations": 500, "block_unit": "cell"},
+  "collision": {"latent": "median step temperature within theta, dichotomised", "tv_tolerance": 1e-6},
+  "gates": ["G1_bound","G2_attained","G3_monotone","G4_nstar_and_sion",
+            "G5_collision_witness","G6_collision_blocks_certification"]
+}

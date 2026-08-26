@@ -1,0 +1,59 @@
+[
+  {
+    "criterion": "max TV <= 1e-08",
+    "name": "G1_exact_old_evidence_collision",
+    "observed": 2.7755575615628914e-17,
+    "passed": true
+  },
+  {
+    "criterion": "zero grade mismatches for both policies",
+    "name": "G2_policy_grade_flip",
+    "observed": 0,
+    "passed": true
+  },
+  {
+    "criterion": "TV of XOR-derived old evidence <= 1e-08",
+    "name": "G3_data_processing_negative_control",
+    "observed": 2.7755575615628914e-17,
+    "passed": true
+  },
+  {
+    "criterion": "max mass residual <= 1e-08",
+    "name": "G4_probability_normalization",
+    "observed": 2.220446049250313e-16,
+    "passed": true
+  },
+  {
+    "criterion": "all augmented TV > 1e-08 and formula residual <= 1e-08",
+    "name": "G5_registered_proxy_breaks_gate",
+    "observed": {
+      "max_formula_residual": 1.942890293094024e-16,
+      "min_augmented_tv": 0.015811388300841916
+    },
+    "passed": true
+  },
+  {
+    "criterion": "Delta(1)=0, Delta(2)=1/8, gamma(2)=1/16, n*=2",
+    "name": "G6_finite_block_landmarks",
+    "observed": {
+      "delta_1": 5.551115123125783e-17,
+      "delta_2": 0.1250000000000001,
+      "gamma_2": 0.0625,
+      "max_residual": 1.1102230246251565e-16,
+      "n_star": 2
+    },
+    "passed": true
+  },
+  {
+    "criterion": "min Delta(n)-Delta(n-1) >= -1e-08",
+    "name": "G7_frontier_monotonicity",
+    "observed": 0.0014648437500002776,
+    "passed": true
+  },
+  {
+    "criterion": "max |primal TV-dual gap| <= 1e-08",
+    "name": "G8_sion_primal_dual_identity",
+    "observed": 6.106226635438361e-16,
+    "passed": true
+  }
+]
