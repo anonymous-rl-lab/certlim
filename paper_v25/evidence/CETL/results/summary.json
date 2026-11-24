@@ -1,0 +1,129 @@
+{
+  "n": 2890,
+  "n_test": 1057,
+  "n_blocks_test": 70,
+  "fits": [
+    {
+      "channel": "A",
+      "features": [
+        "initial_mv"
+      ],
+      "lo": 0.6664445251019862,
+      "hi": 0.8654532351239026
+    },
+    {
+      "channel": "B",
+      "features": [
+        "initial_mv",
+        "charge_samples",
+        "final_q",
+        "range_q",
+        "v_0",
+        "i_0",
+        "v_0.1",
+        "i_0.1",
+        "v_0.25",
+        "i_0.25",
+        "v_0.5",
+        "i_0.5",
+        "v_0.75",
+        "i_0.75",
+        "v_0.9",
+        "i_0.9",
+        "v_1",
+        "i_1",
+        "first_s_3300",
+        "q_3300",
+        "first_s_3350",
+        "q_3350",
+        "first_s_3400",
+        "q_3400",
+        "first_s_3450",
+        "q_3450",
+        "first_s_3500",
+        "q_3500",
+        "first_s_3550",
+        "q_3550",
+        "first_s_3600",
+        "q_3600",
+        "v_mean",
+        "v_sd",
+        "v_min",
+        "v_max",
+        "i_mean",
+        "i_sd",
+        "i_min",
+        "i_max"
+      ],
+      "lo": 0.692783304648114,
+      "hi": 0.8875340919192738
+    }
+  ],
+  "counts": {
+    "cal": {
+      "count": 723,
+      "sum": 608
+    },
+    "test": {
+      "count": 1057,
+      "sum": 915
+    },
+    "train": {
+      "count": 1110,
+      "sum": 943
+    }
+  },
+  "label_check_max_abs_mAh": 0.0,
+  "label_check_over_1_mAh": 0,
+  "heldout_hours_all": 1312.4908333333333,
+  "gross_discharge_hours": {
+    "A": 49.00666666666667,
+    "B": 625.1941666666667
+  },
+  "paid_charge_hours": 1404.3466666666668,
+  "paired": [
+    {
+      "n": 142,
+      "wins": 85,
+      "loss": 1,
+      "p": 1.124448645189272e-24
+    },
+    {
+      "n": 915,
+      "wins": 383,
+      "loss": 35,
+      "p": 2.0036851551750943e-75
+    }
+  ],
+  "bootstrap": {
+    "draws_with_both_grades": 9999,
+    "draws": 10000,
+    "gain_interval": [
+      0.25429975429975427,
+      0.4977358670741023
+    ],
+    "hours_interval": [
+      381.91962500000005,
+      777.6180416666666
+    ]
+  },
+  "coarse_design": {
+    "cutpoints_mV": [
+      2273.5,
+      3115.5,
+      3291.0
+    ],
+    "overlap": false,
+    "A_robust_optimum": 0.1044022015910153,
+    "A_robust_upper": 0.10440220159101554,
+    "B_joint_error_U": [
+      0.06181491755712814,
+      0.0370582526440938
+    ],
+    "B_joint_decisive_L": [
+      0.5995654536744287,
+      0.37885890842581244
+    ],
+    "strict_gap_L": null
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "target_rows": 1024,
+  "sha256_primary_cell_results": "c271779a5fc0fcb94edca9ce5c7f066e5d5dd046af77994e079d770923a2e397",
+  "absolute_score_delta_max": 2.220446049250313e-16,
+  "all_actions_reproduced": true,
+  "all_reference_capacities_reproduced": true,
+  "capacity_range_mAh": [
+    13677.0,
+    15837.0
+  ],
+  "discharge_endpoint_mV_05_50_95": [
+    2579.0,
+    2636.0,
+    2704.0
+  ],
+  "integrated_discharge_vs_counter_abs_error_mAh_50_95_max": [
+    34.21291666666639,
+    54.17304166666617,
+    71.57583333333423
+  ],
+  "label_agreement_integrated_discharge_at_10850": 1024,
+  "original_train_05_50_95": {
+    "charge_median_current_mA": [
+      9999.0,
+      10000.0,
+      10000.0
+    ],
+    "end_voltage_mV": [
+      3607.0,
+      3624.0,
+      3631.0
+    ],
+    "charge_end_mAh": [
+      9712.855,
+      11987.25,
+      14829.849999999999
+    ],
+    "charge_rows": [
+      1317.0,
+      1603.0,
+      1953.8499999999997
+    ]
+  },
+  "target_05_50_95": {
+    "charge_median_current_mA": [
+      5999.0,
+      6000.0,
+      6000.0
+    ],
+    "end_voltage_mV": [
+      3614.0,
+      3620.0,
+      3626.0
+    ],
+    "charge_end_mAh": [
+      6318.75,
+      12139.5,
+      12837.65
+    ],
+    "charge_rows": [
+      1385.15,
+      2561.0,
+      2753.7
+    ]
+  }
+}

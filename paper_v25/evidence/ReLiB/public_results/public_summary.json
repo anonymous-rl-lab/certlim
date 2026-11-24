@@ -1,0 +1,59 @@
+{
+  "blind_decisions_sha256": "2ab27f21f5d29b2dfbb6359db80dce6e078a31a51797400c610bcfa17ee9bcad",
+  "tar_sha256": "e8d868b26a3b205a7a8446fac2642bf1e88ab51e31d2a1c46452bc653f1d961d",
+  "selection": "SHA256(full archive member path ascending), first 1024",
+  "population_csv_count": 6909,
+  "selected": 1024,
+  "lock_sha256": "7b554cd6fff19141990a89c27a968ab470d1d875a622f917b31ce6b3d0cb48b0",
+  "selected_records": {
+    "total": 1024,
+    "pass_n": 0,
+    "fail_n": 791,
+    "refer_n": 233,
+    "observed_references": 1024
+  },
+  "raw_matches": 0,
+  "signature_matches": 0,
+  "in_sample_duplicate": 0,
+  "scoped_records": {
+    "total": 1024,
+    "pass_n": 0,
+    "fail_n": 791,
+    "refer_n": 233,
+    "observed_references": 1024
+  },
+  "invalid_charge": 0,
+  "filename_dates": 6,
+  "time_check": {
+    "n": 1024,
+    "within_2_9_to_3_1": 1024,
+    "median_seconds": 3.0001000033334444
+  },
+  "by_grade": {
+    "below": {
+      "total": 0,
+      "pass_n": 0,
+      "fail_n": 0,
+      "refer_n": 0,
+      "observed_references": 0,
+      "wrong": 0,
+      "empirical_error": null,
+      "upper_97_5_iid_only": null
+    },
+    "qualified": {
+      "total": 1024,
+      "pass_n": 0,
+      "fail_n": 791,
+      "refer_n": 233,
+      "observed_references": 1024,
+      "wrong": 791,
+      "empirical_error": 0.7724609375,
+      "upper_97_5_iid_only": 0.7978143432938043
+    }
+  },
+  "potential_skips": 791,
+  "observed_saved_by_this_rule": null,
+  "confirmed_original_pack_ids": null,
+  "confirmed_arrival_batch_ids": null,
+  "confirmed_cell_serials": null
+}

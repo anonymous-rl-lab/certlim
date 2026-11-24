@@ -1,0 +1,1 @@
+2026-11-24. Clean rebuild from packaged 389307-step input. 57 result CSVs compared byte-for-byte. PASS. Numerical invariants: src/check.py.

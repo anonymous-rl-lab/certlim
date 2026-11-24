@@ -1,0 +1,9 @@
+source,policy,safe,unsafe,unresolved,cells_safe,cells_unsafe,rows
+missing,pooled,443,528,568,24,16,1539
+missing,uniform,98,155,260,15,8,513
+missing,skew_high,120,243,150,16,16,513
+missing,skew_low,225,130,158,24,4,513
+confidence,pooled,26,250,1263,8,4,1539
+confidence,uniform,0,76,437,0,3,513
+confidence,skew_high,0,137,376,0,4,513
+confidence,skew_low,26,37,450,8,4,513

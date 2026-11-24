@@ -1,0 +1,5 @@
+task,grade,n,cells,correct,opposite,alert
+whole_cell_CS,S,8,8,8,0,0
+whole_cell_CS,U,2,2,2,0,0
+stage_monitor,S,102,13,58,1,43
+stage_monitor,U,62,2,62,0,0

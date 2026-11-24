@@ -1,0 +1,131 @@
+{
+  "actual_sources": 2,
+  "cells": 8,
+  "date_range": [
+    "2022-01-27",
+    "2023-07-06"
+  ],
+  "distinct_visits": 88,
+  "optional": 41,
+  "anchors": 47,
+  "reference_known_on_optional": 41,
+  "unknown_optional": 0,
+  "optional_primary": [
+    {
+      "grade": "qualified",
+      "n": 14,
+      "cells": 4,
+      "packs": 2,
+      "pass_n": 5,
+      "fail_n": 0,
+      "refer_n": 9,
+      "wrong": 0,
+      "decisive": 5,
+      "hours": 81.2461111111111
+    },
+    {
+      "grade": "below",
+      "n": 27,
+      "cells": 7,
+      "packs": 1,
+      "pass_n": 0,
+      "fail_n": 26,
+      "refer_n": 1,
+      "wrong": 0,
+      "decisive": 26,
+      "hours": 325.6713888888889
+    }
+  ],
+  "optional_secondary": [
+    {
+      "grade": "qualified",
+      "n": 14,
+      "cells": 4,
+      "packs": 2,
+      "pass_n": 5,
+      "fail_n": 0,
+      "refer_n": 9,
+      "wrong": 0,
+      "decisive": 5,
+      "hours": 81.2461111111111
+    },
+    {
+      "grade": "below",
+      "n": 27,
+      "cells": 7,
+      "packs": 1,
+      "pass_n": 0,
+      "fail_n": 26,
+      "refer_n": 1,
+      "wrong": 0,
+      "decisive": 26,
+      "hours": 325.6713888888889
+    }
+  ],
+  "first_optional_primary": [
+    {
+      "grade": "qualified",
+      "n": 1,
+      "cells": 1,
+      "packs": 1,
+      "pass_n": 0,
+      "fail_n": 0,
+      "refer_n": 1,
+      "wrong": 0,
+      "decisive": 0,
+      "hours": 0.0
+    },
+    {
+      "grade": "below",
+      "n": 7,
+      "cells": 7,
+      "packs": 1,
+      "pass_n": 0,
+      "fail_n": 7,
+      "refer_n": 0,
+      "wrong": 0,
+      "decisive": 7,
+      "hours": 88.87249999999999
+    }
+  ],
+  "same_visit_all": [
+    {
+      "grade": "qualified",
+      "n": 32,
+      "cells": 4,
+      "packs": 2,
+      "pass_n": 10,
+      "fail_n": 0,
+      "refer_n": 22,
+      "wrong": 0,
+      "decisive": 10,
+      "hours": 162.59472222222223
+    },
+    {
+      "grade": "below",
+      "n": 56,
+      "cells": 7,
+      "packs": 1,
+      "pass_n": 0,
+      "fail_n": 55,
+      "refer_n": 1,
+      "wrong": 0,
+      "decisive": 55,
+      "hours": 688.3894444444444
+    }
+  ],
+  "total_discharge_h": 1200.3947222222223,
+  "eligible_discharge_h": 559.1525,
+  "early_discharge_h_primary": 406.9175,
+  "unique_pairs_action_diff": 0,
+  "full_cohort_handled": 31,
+  "primary_grade_events_by_pack": {
+    "Leaf Gen 1 / below": 27,
+    "Leaf Gen 1 / qualified": 9,
+    "Leaf Gen 2 / qualified": 5
+  },
+  "max_deviation_archive_step_Ah": 3.552713678800501e-15,
+  "max_deviation_archive_charge_Ah": 3.552713678800501e-15,
+  "max_deviation_archive_step_h": 1.7763568394002505e-15,
+  "max_integration_gap_Ah": 0.007292618118018623
+}

@@ -1,161 +1,67 @@
-# Finite-Evidence Causal Safety Certification for Battery Management Systems
+# Finite-Evidence Limits for Causal Safety Certification in Battery Management Systems
 
-Reproduction repository for the paper. It contains the frozen evidence chain
-behind every number, table, and figure in the manuscript and its Supplementary
-Information: registered configurations, analysis code, results, protocol and
-errata ledgers, and a byte-level manifest for each experiment.
+**Paper v25 · reproduction bundle v25-R1 · certlim 0.2.1.** This release combines the paper's experiments with the audited Python wheel and source distribution. Run commands below from the repository root. Use Python 3.12 for the reproduction driver. The standalone tool supports Python 3.10–3.13 as tested.
 
-The certification kernel itself is packaged separately:
+## Verify and install
 
-```bash
-pip install certlim
+```sh
+python reproduce.py verify
+python -m pip install ./packages/certlim-0.2.1-py3-none-any.whl
+python reproduce.py verify-tool
 ```
 
-## One command
+The first command uses the standard library. It checks the complete distribution file set, SHA-256 digests, and numerical claims in the bundled manuscript and supplement. It reports unlisted, missing and changed files. Git's own metadata is excluded. For a working tree containing generated files, use `verify --working`. That mode permits the documented `raw/` and `replay_runs/` areas and Python bytecode caches. Published evidence tables always remain covered by the manifest. Put virtual environments outside the source tree.
 
-```bash
-pip install -r requirements.txt
-python3 reproduce.py                 # verify:  manifests, contract tests, every paper number
-python3 reproduce.py --tier core     # recompute every result the paper reports
-python3 reproduce.py --tier full     # core, plus raw download and feature extraction
-python3 reproduce.py --list          # show the stages without running them
+The wheel and the [source distribution](packages/certlim-0.2.1.tar.gz) are the original 0.2.1 artifacts. Their [SHA-256 digests](packages/SHA256SUMS) are pinned. For offline installation in an environment that already provides NumPy and SciPy, use `python -m pip install --no-index --no-deps ./packages/certlim-0.2.1-py3-none-any.whl`. The source distribution includes the tool's project metadata, source, tests, and Chinese quick start.
+
+`verify-tool` checks the installed tool's version and package files against the bundled wheel. It then reads the paper evidence, verifies source digests, recomputes both error bounds and the minimum decision rate of the 24 NASA rules (720 lookup rows), and checks nine CETL, ReLiB and Leaf analysis scopes including their denominators. It prints the measured NASA bounds and each screening workload.
+
+## Reproduce the paper
+
+| Evidence | Starting point | Rebuilt output |
+|---|---|---|
+| NASA | 389,307 published discharge steps. The ten-column CSV.GZ is included at its paper path. The independent rebuild starts from the original historical Parquet and checks the projection hash. | 57 base result tables, 8 robust-rule tables and 5 measurement/transfer tables. |
+| CETL | Original public MAT. Refit, calibrate, freeze, then adjudicate the held-out records. | 7 files, plus a check of the frozen forest. CETL-B decides on 484/1,057 complete and 485/1,400 assigned records. |
+| ReLiB | Original 15.5 Ah TAR, and the CETL MAT for the independent scoring check. Seal the blind actions before reading reference discharges. | 6 primary-sample and 5 census files. The census has 5,356 false rejections among 6,907 known qualified records. |
+| Leaf | Original C/20 workbook ZIP. Rebuild actions and reference grades by unit and visit. | 8 files. The prior-capacity schedule decides on 31/41 optional visits and 31/88 total visits. The secondary same-visit schedule decides on 65/88. |
+
+```sh
+python -m pip install -r requirements-capacity.txt
+python -m pip install -r paper_v25/evidence/NASA_chain_v2/requirements.txt
+python reproduce.py nasa --work-dir ../tii-replay
+python reproduce.py raw --cetl-mat ../raw/CETL-data.mat --relib-tar ../raw/15.5Ah.tar --leaf-zip ../raw/Cby20.zip --work-dir ../tii-replay
 ```
 
-`make verify`, `make core`, `make full` and `make list` are equivalent.
+Both commands use fresh output directories and compare regenerated files byte for byte with their frozen counterparts. Logs and `verification.json` stay in those directories. For one capacity dataset, specify `raw --dataset cetl`, `relib` or `leaf` with the corresponding input arguments. NASA uses PyArrow when available, or pandas/NumPy and Linux `libsnappy.so.1`. Install PyArrow on systems without that library. The paper’s step table can also be used directly at `paper_v25/evidence/NASA_chain_v2/data/nasa_steps.csv.gz`. The command `python reproduce.py prepare-nasa` verifies it or restores it from the original Parquet if missing.
 
-**`verify` (seconds, no recomputation).** Checks that the released artifacts are
-byte-for-byte what the manifests record, that the repository contract tests pass,
-and that all 25 headline numbers in the paper still read out of the artifacts they
-came from. Run this first: if it fails, recomputation cannot help.
+Acquire the capacity inputs as follows. The ReLiB fetcher needs the system `zstd` command. The three raw files occupy about 1.7 GB, with additional space needed during download and replay.
 
-**`core` (recomputation from the processed data in this repository).** Re-runs
-every analysis the paper reports, then verifies. It overwrites files under each
-experiment's `results/`, so run it on a clean checkout and read `git diff` — an
-empty diff is the reproduction claim. Stages are independent, and a failing stage
-is reported without stopping the others.
+```sh
+python paper_v25/evidence/CETL/fetch.py ../raw
+python paper_v25/evidence/ReLiB/fetch_relib.py ../raw
+python paper_v25/evidence/Leaf/fetch.py ../raw/Cby20.zip
+```
 
-The NASA frontier stage dominates the `core` wall clock, because it solves two
-independent linear programs at every block length up to 20 over 1,266 registered
-models. `MAX_N=5 python3 reproduce.py --tier core` caps it at five and reproduces
-the first rows of Table I in a few minutes; the manifest check then reports the
-frontier file as changed, which is expected under a capped run.
+## Files and versions
 
-**`full`.** Adds the upstream downloads and feature extraction. This needs tens of
-gigabytes and the upstream archives, and is the only tier that touches the network.
-
-## What "reproduces" means here
-
-A rerun on another machine legitimately rewrites what each experiment records
-*about* the run: its timestamp, its wall clock, and the library versions it ran
-under. `scripts/check_reproduction.py` separates those from results that actually
-moved, and only the second kind fails the check:
-
-| bucket | meaning |
+| Location | Use |
 |---|---|
-| `provenance` | timestamps, wall clock, library versions |
-| `numeric` | agrees to floating-point tolerance (1e-8 relative) |
-| `shortened` | a capped run (`MAX_N`) wrote a prefix of the frozen table |
-| `substantive` | a result moved — this is the only failing bucket |
+| [Paper](paper_v25/TII_MAIN_MANUSCRIPT_v25.md) and [supplement](paper_v25/SUPPLEMENTARY_INFORMATION_v25.md) | The numerical manuscript sources checked here. The separate v25 paper package includes the submission PDFs and complete typesetting assets. |
+| `paper_v25/evidence/NASA_chain_v2/`, `review_v21/`, `decision_v22/` | All three are active stages in the **v25** NASA analysis. The suffixes identify when the analyses were introduced. |
+| `paper_v25/evidence/CETL/`, `ReLiB/`, `Leaf/` | Protocols, original results, data acquisition and raw replay. The archive hours describe retrospective reference-test workload. |
+| `packages/` | Installable certlim 0.2.1 and its matching source distribution. |
+| `legacy/` | Historical certlim-repro **0.7.0** inputs and experiments, including ALT, PulseBat, Zhu, Jones and MATR. Use the workspace command below for the original repository entry points and frozen snapshot. |
+| [Licenses and data sources](LICENSES.md) | Component-specific notices, software licenses and dataset provenance. |
 
-A `core` run of this repository under Python 3.11 / numpy 2.4 / pandas 3.0 /
-scipy 1.17, against artifacts frozen under Python 3.12 / numpy 2.3 / pandas 2.2,
-leaves 394 of 411 tracked files byte-identical and classifies all 17 that moved as
-provenance, numeric, or shortened. No scientific value changed.
+## Historical reproduction
 
-`scripts/verify_manifest.py` still answers the strict byte-for-byte question, which
-is the right one for a fresh clone that has not recomputed anything.
-
-## Measured stage times
-
-One commodity cloud core, `core` tier, to fix orders of magnitude:
-
-| stage | uncapped | `MAX_N=3` |
-|---|---:|---:|
-| NASA frontier (Table I, S3) | 555 s | 1 s |
-| NASA adversarial collision (27) | 79 s | 79 s |
-| Battery ALT null and sweep | 145 s | 145 s |
-| adversarial channel laws | 78 s | 78 s |
-| PulseBat 40-point grid | 52 s | 52 s |
-| everything else | under 40 s each | |
-
-## What is checked
-
-`scripts/check_paper_numbers.py` names each headline claim, the artifact it comes
-from, and how the value is read out of it — so a number drifting in the paper and
-a number drifting in the artifacts both fail:
-
-```
-where     claim                                          paper      artifact
-Table I   Delta(1), NASA frontier                       0.1494      0.149419  ok
-(27)      adversarial decisiveness                         0.1           0.1  ok
-(28)      ALT Delta_{K=2}(1) is zero                      True          True  ok
-(30)      diagnostic SOC 10%, OCV                       0.6273      0.627273  ok
-S9.1      cohort certificate non-vacuous                  True          True  ok
-S9.5      sensitivity prediction S3 rejected             False         False  ok
+```sh
+python reproduce.py legacy-workspace ../tii-legacy-070
+cd ../tii-legacy-070
+python -m pip install -r requirements.txt
+python reproduce.py --tier verify
 ```
 
-## Layout
+The export checks all **592** historical files against their original SHA-256 digests before making the workspace available. It recreates 179 frozen reference copies from their matching originals. The PulseBat bootstrap table is supplied as its original 119,960-row CSV in `legacy/experiments/pulsebat_procurement_correction_v02/results/full/soc_menu_samples.csv`. The exported workspace contains both the mutable results and independent frozen files, so the original comparison of numerical, metadata and substantive changes remains available. The compatibility command `python legacy/reproduce.py --tier verify` creates a temporary export automatically. Direct readers of historical file paths and workflows that write results should use the exported tree.
 
-| Path | What it holds |
-|---|---|
-| `experiments/synthetic_gates` | Registered synthetic companion: collision, policy reversal, data-processing control, LP primal--dual agreement |
-| `experiments/nasa_randomized_usage_gate` | Primary causal-policy experiment; the frontier of Table I, the adversarial collision of (27) |
-| `experiments/battery_alt_reference_channel_gate` | NASA/UCF accelerated life; the finite-order gate closure of (28) |
-| `experiments/pulsebat_procurement_external` | PulseBat registered SOC=5% frontier |
-| `experiments/pulsebat_procurement_correction_v02` | PulseBat 40-point SOC x menu grid and cohort audit |
-| `experiments/zhu_relaxation_external` | Zhu relaxation: pairwise versus composite geometry, pipeline controls |
-| `experiments/jones_eis_external` | Jones EIS transport audit |
-| `experiments/severson_matr_external` | Severson/MATR transport audit |
-| `experiments/nasa_confidence_and_baselines` | Confidence certificate, natural-collision census, baseline comparison, sensitivity |
-| `docs/` | Data provenance, claim status, and the frozen verdict ledger |
-| `scripts/` | Manifest build and verification, paper-number check |
-
-Every experiment directory is self-contained: its own `config/` (registered before
-computation), `docs/` (frozen protocol and errata), `results/`, `tests/`, and
-`MANIFEST.sha256`.
-
-## Analysis layers
-
-Every reported quantity carries exactly one label, and the labels bind:
-
-- **frozen confirmatory** — endpoint, units, model classes, evidence menu, quantizer
-  and gate fixed before the corresponding computation;
-- **corrected diagnostic** — a documented implementation or protocol defect repaired
-  without overwriting the frozen output; a corrected result cannot reverse a
-  registered verdict;
-- **constructive stress test** — optimization deliberately searching for a collision
-  or least-favourable mechanism; it establishes existence, not prevalence.
-
-Corrected analyses are stored beside the frozen ones rather than in place of them,
-which is why some directories carry both a result and its erratum.
-`docs/FROZEN_CONCLUSIONS.zh.md` is the verdict-by-verdict ledger.
-
-## Data
-
-All six cohorts are public and are **not** redistributed here in raw form. The
-repository ships the processed tables the analyses actually consume, and each
-experiment's `docs/DATA_PROVENANCE.md` records the upstream source, the retrieval
-script, and the checksums.
-
-| Cohort | Reference |
-|---|---|
-| NASA PCoE Randomized Battery Usage | [25] |
-| NASA/UCF accelerated life | [26] |
-| PulseBat | [27] |
-| Zhu voltage relaxation | [28] |
-| Jones EIS | [29] |
-| Severson/MATR | [2] |
-
-See `THIRD_PARTY_NOTICES.md` for upstream licences.
-
-## Notes for readers of the frozen configurations
-
-Some registered configuration files record their input path under an earlier
-repository name (`repo_v6`). Those strings are part of the preregistration record
-and are left byte-identical; the analysis scripts resolve the same artifacts at
-their current in-repository location.
-
-## Licence
-
-MIT for the code in this repository (see `LICENSE`). The battery datasets remain
-under their upstream licences.
+The root [GitHub workflow](.github/workflows/reproduce.yml) verifies a clean checkout, exercises the manifest checker and the bundled tool, rebuilds the NASA tables and checks the exported historical snapshot. The three capacity archives can be replayed separately with the commands above.

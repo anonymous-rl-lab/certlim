@@ -1,0 +1,11 @@
+{
+  "source_zip_name": "certlimrepro.zip",
+  "source_zip_sha256": "99733c3945caaca1a12fda6fde43796e698646d4996dfe384da7e66bc85fef2f",
+  "original_steps_parquet_sha256": "49ba2b723b4f14191fd5946cb1acd8da902cdd161dc995ea804facd6ae982e39",
+  "included_steps_csv_gz_sha256": "2a271e9b13a7321c66c80915236f82a93c728be6a99ed8029d6a340236803cec",
+  "v19_frontier_sha256": "909ad87e72027cb30f04d5c2d9ee248d65b6920f2ae23e7855a67963e3bbeefc",
+  "protocol_sha256": "c4c7b935bd87f5d42613e037d38cb40effffa577eb59e90c5a9cfe87a53bb06d",
+  "rows": 389307,
+  "cells": 28,
+  "date": "2026-11-24"
+}

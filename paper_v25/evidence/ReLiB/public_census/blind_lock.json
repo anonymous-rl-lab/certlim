@@ -1,0 +1,8 @@
+{
+  "blind_decisions_sha256": "87086de4987856a4e8b8fe2889363ab5f7720fb6497118250db93bbcdac36869",
+  "tar_sha256": "e8d868b26a3b205a7a8446fac2642bf1e88ab51e31d2a1c46452bc653f1d961d",
+  "selection": "full 15.5Ah archive, post-primary census",
+  "population_csv_count": 6909,
+  "selected": 6909,
+  "lock_sha256": "7b554cd6fff19141990a89c27a968ab470d1d875a622f917b31ce6b3d0cb48b0"
+}

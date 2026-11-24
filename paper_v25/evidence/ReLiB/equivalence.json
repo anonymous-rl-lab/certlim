@@ -1,0 +1,23 @@
+{
+  "original_training_rows": 1110,
+  "original_calibration_rows": 723,
+  "reference_rows": 2890,
+  "identical_binary64_scores_to_reconstructed_sklearn": 2890,
+  "max_abs_difference_vs_published_rounded_scores": 4.99933427988708e-13,
+  "identical_published_actions": 2890,
+  "complete_test_rows": 1057,
+  "charge_only_heldout_routes_matched": 1400,
+  "charge_only_heldout_actions": {
+    "REFER": 915,
+    "FAIL": 119,
+    "PASS": 366
+  },
+  "feature_count": 40,
+  "trees": 200,
+  "total_nodes": 42532,
+  "equality_thresholds_refer": true,
+  "known_raw_records": 4000,
+  "unique_historical_charge_hashes": 4000,
+  "measured_new_cell_outcomes": null,
+  "work_order_confirmed_skips": null
+}

@@ -1,0 +1,59 @@
+{
+  "blind_decisions_sha256": "87086de4987856a4e8b8fe2889363ab5f7720fb6497118250db93bbcdac36869",
+  "tar_sha256": "e8d868b26a3b205a7a8446fac2642bf1e88ab51e31d2a1c46452bc653f1d961d",
+  "selection": "full 15.5Ah archive, post-primary census",
+  "population_csv_count": 6909,
+  "selected": 6909,
+  "lock_sha256": "7b554cd6fff19141990a89c27a968ab470d1d875a622f917b31ce6b3d0cb48b0",
+  "selected_records": {
+    "total": 6909,
+    "pass_n": 0,
+    "fail_n": 5358,
+    "refer_n": 1551,
+    "observed_references": 6907
+  },
+  "raw_matches": 0,
+  "signature_matches": 0,
+  "in_sample_duplicate": 0,
+  "scoped_records": {
+    "total": 6909,
+    "pass_n": 0,
+    "fail_n": 5358,
+    "refer_n": 1551,
+    "observed_references": 6907
+  },
+  "invalid_charge": 0,
+  "filename_dates": 6,
+  "time_check": {
+    "n": 6909,
+    "within_2_9_to_3_1": 6909,
+    "median_seconds": 3.0001000033334444
+  },
+  "by_grade": {
+    "below": {
+      "total": 0,
+      "pass_n": 0,
+      "fail_n": 0,
+      "refer_n": 0,
+      "observed_references": 0,
+      "wrong": 0,
+      "empirical_error": null,
+      "upper_97_5_iid_only": null
+    },
+    "qualified": {
+      "total": 6907,
+      "pass_n": 0,
+      "fail_n": 5356,
+      "refer_n": 1551,
+      "observed_references": 6907,
+      "wrong": 5356,
+      "empirical_error": 0.7754452005212104,
+      "upper_97_5_iid_only": 0.7852407379316592
+    }
+  },
+  "potential_skips": 5358,
+  "observed_saved_by_this_rule": null,
+  "confirmed_original_pack_ids": null,
+  "confirmed_arrival_batch_ids": null,
+  "confirmed_cell_serials": null
+}

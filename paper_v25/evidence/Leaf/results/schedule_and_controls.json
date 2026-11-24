@@ -1,0 +1,57 @@
+{
+  "primary_all_scheduled": {
+    "below": {
+      "n": 56,
+      "wrong": 0,
+      "decisive": 26
+    },
+    "qualified": {
+      "n": 32,
+      "wrong": 0,
+      "decisive": 5
+    }
+  },
+  "posthoc_no_band_previous": {
+    "below": {
+      "n": 27,
+      "wrong": 1,
+      "decisive": 27
+    },
+    "qualified": {
+      "n": 14,
+      "wrong": 0,
+      "decisive": 14
+    }
+  },
+  "posthoc_no_band_same_visit_all": {
+    "below": {
+      "n": 56,
+      "wrong": 0,
+      "decisive": 56
+    },
+    "qualified": {
+      "n": 32,
+      "wrong": 0,
+      "decisive": 32
+    }
+  },
+  "charge_discharge_abs_difference_quantiles_Ah": {
+    "0.0": 0.0018718078577002473,
+    "0.5": 0.05371896398249909,
+    "0.95": 0.23125785961861206,
+    "1.0": 0.3337913309476015
+  },
+  "same_visit_all_potential_h": 850.9841666666666,
+  "same_visit_first_of_each_unit": {
+    "below": {
+      "n": 7,
+      "wrong": 0,
+      "decisive": 7
+    },
+    "qualified": {
+      "n": 1,
+      "wrong": 0,
+      "decisive": 0
+    }
+  }
+}

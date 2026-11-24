@@ -1,0 +1,27 @@
+{
+  "additional_actions_without_reference_QC": {
+    "A": {
+      "3805": 0
+    },
+    "B": {
+      "3805": 1
+    }
+  },
+  "zero_patterns": {
+    "only_initial_charge_zero": 1099,
+    "other_charge_zero": 10,
+    "discharge_trace_zero": 1
+  },
+  "total": 4000,
+  "valid": 2890,
+  "raw_heldout": 1400,
+  "invalid_heldout": 343,
+  "source_order_capacity_spearman": -0.738784837637826,
+  "test_grade_block_counts": {
+    "False": 8,
+    "True": 63
+  },
+  "gross_hours_saved_B_minus_A": 576.1874999999993,
+  "break_even_minutes_per_complete_cell": 32.706953642384065,
+  "break_even_minutes_per_all_heldout": 24.721499999999974
+}

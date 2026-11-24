@@ -1,0 +1,8 @@
+{
+  "blind_decisions_sha256": "2ab27f21f5d29b2dfbb6359db80dce6e078a31a51797400c610bcfa17ee9bcad",
+  "tar_sha256": "e8d868b26a3b205a7a8446fac2642bf1e88ab51e31d2a1c46452bc653f1d961d",
+  "selection": "SHA256(full archive member path ascending), first 1024",
+  "population_csv_count": 6909,
+  "selected": 1024,
+  "lock_sha256": "7b554cd6fff19141990a89c27a968ab470d1d875a622f917b31ce6b3d0cb48b0"
+}

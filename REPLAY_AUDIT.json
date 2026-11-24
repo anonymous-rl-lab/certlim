@@ -1,0 +1,57 @@
+{
+  "paper_version": "v25",
+  "level": "from original public files through frozen ledgers",
+  "matched_results": {
+    "CETL/results": {
+      "audit.json": "d07a748973b2105b9113a5ee173bd22cd10d8726fbaf9b3dbda4ce5188f81166",
+      "audit_all_heldout.csv": "fc61584aac3e7e52fed859f5d9f22e32bb7c67253ecc3dc00c1c7775ed011b20",
+      "blocks.csv": "0db1a8fa85e557679338cf54bbe47db2ba725093d57c1f63fca0e1d02b189a61",
+      "excluded.csv": "7198134c888e061b27f4d75580fa4b402c2306529ae6ab4e2114f59c9706521d",
+      "metrics.csv": "231ac4b4d775306909b7cfee0aeac401715861d83b3009adbb7b689d6feaa206",
+      "predictions.csv": "7360c8be5e02bcaae60501b3e0a1e8de4653a2fe702b5fc9f203e072568ddeda",
+      "summary.json": "b13026f7c3c2ab0616b5839d4a83240c1e42122888531fec1189fe4121dbd348"
+    },
+    "ReLiB/public_results": {
+      "blind_decisions.csv": "2ab27f21f5d29b2dfbb6359db80dce6e078a31a51797400c610bcfa17ee9bcad",
+      "blind_lock.json": "812b2ea7295279f77344aa282b0b139fdb5e0d4bf84ce5f74602babbb1e41b72",
+      "by_filename_date.csv": "bf778b8ca86aa03fd34dba0fac3a4db6271de4dde18053543d76a3a461674804",
+      "cell_results.csv": "c271779a5fc0fcb94edca9ce5c7f066e5d5dd046af77994e079d770923a2e397",
+      "independent_check.json": "adb9d5cd8fc5115f80f8815148500670b0d1433403969d90c4a791f29b1277be",
+      "public_summary.json": "5705df9a8131238b05a749b7b16803cf34b035646d3d691f0713a537fbe4604f"
+    },
+    "ReLiB/public_census": {
+      "blind_decisions.csv": "87086de4987856a4e8b8fe2889363ab5f7720fb6497118250db93bbcdac36869",
+      "blind_lock.json": "5625298e420e3b5fa7194dc10b09e258dcad3b739d1324f4bb0c0845adbd1a2a",
+      "by_filename_date.csv": "7f1fad705db9d875f084ffb3f77ab6e1f1f1eda083b82a906a0b661043512a9a",
+      "cell_results.csv": "9858ea92e72b713296814b82df4ecf8139fdbd22df4a245d335462c07624d119",
+      "public_summary.json": "0067eec87adb09dcc3ee3909d9f73f18f67561c30a8448bde2f2d3ffaa230d11"
+    },
+    "Leaf/results": {
+      "actions.csv": "cd686a2db191b1ff23a8ebdf482fbc9f96602ba2a5832b6fe9a7bd4d407b368a",
+      "blind.sha256": "408506ebfd3f7a0e66b7776e743c1e78abc17e7bee1d90f452debc32d1e3663c",
+      "by_cell_pack.csv": "60de7c438fafeb1d2961804f1a284a76d0e8b9659288c8f60d2a1a20b824ad52",
+      "paired.csv": "cae52606e9263ad08781a553481aafaf7c03c36cf88e279a2a362bdc3453bcd6",
+      "schedule_and_controls.json": "0eb98cc92c9e824dc3309fba9ddd5008aa19c199f688216fe95c2f5bee7f17fa",
+      "summary.json": "2a756e73ef7dd58dc2373f62be566a27d92cecdf1de48aff0b749d6766e158eb",
+      "traces.csv": "db53b784ef3eeead49e45150be94adff2fce042684e01ae7021b8f35fb0c435c",
+      "visits.csv": "75f33fc6290a4e6454661e01e8124f5a92c7e0d0d9adbbfd1ab0435e4c79adf8"
+    }
+  },
+  "matched_result_file_count": 26,
+  "public_inputs": {
+    "CETL-data.mat": {
+      "bytes": 75675859,
+      "sha256": "cc9e295928f056117dadf6781d1ee0f7b238eb93c38c02db08817fce006cffef"
+    },
+    "relib155.tar": {
+      "bytes": 1548544000,
+      "sha256": "e8d868b26a3b205a7a8446fac2642bf1e88ab51e31d2a1c46452bc653f1d961d"
+    },
+    "c20.zip": {
+      "bytes": 48198563,
+      "sha256": "a4952be5b9d960c57b208a523b90ef9923f65ee92767b46b6b1b88560a62c98c"
+    }
+  },
+  "legacy_source_zip_sha256": "99733c3945caaca1a12fda6fde43796e698646d4996dfe384da7e66bc85fef2f",
+  "legacy_files_compared_to_original_zip": 592
+}

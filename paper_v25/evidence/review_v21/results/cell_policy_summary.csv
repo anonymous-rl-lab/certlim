@@ -1,0 +1,9 @@
+source,policy,models,safe,unsafe,unresolved,D_lower,D_upper
+missing,pooled,84,24,16,44,0.3208045059968,0.3208630367158
+missing,uniform,28,4,4,20,0.6156560467039,0.6156560473196
+missing,skew_high,28,5,8,15,0.372705648401,0.3727056487737
+missing,skew_low,28,15,4,9,0.4093650688171,0.4093650692265
+confidence,pooled,84,0,5,79,,
+confidence,uniform,28,0,1,27,,
+confidence,skew_high,28,0,4,24,,
+confidence,skew_low,28,0,0,28,,

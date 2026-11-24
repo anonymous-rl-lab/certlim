@@ -1,14 +1,4 @@
+/raw/
+/replay_runs/
 __pycache__/
-*.py[cod]
-.pytest_cache/
-.DS_Store
-experiments/jones_eis_external/data/downloads/*.zip
-experiments/jones_eis_external/data/raw/
-experiments/jones_eis_external/results/*/cycles.csv
-experiments/severson_matr_external/.venv/
-experiments/severson_matr_external/.mplconfig/
-experiments/severson_matr_external/data/raw/
-experiments/severson_matr_external/data/raw/*.mat
-
-# .frozen/ holds reference copies used by scripts/check_reproduction.py
-# to tell a moved result from a moved timestamp. It is committed on purpose.
+*.pyc
